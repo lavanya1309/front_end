@@ -72,6 +72,7 @@ const About = () => {
         >
           <img
             src={BannerBg}
+            loading="lazy"
             alt="Banner bg"
             className="h-full w-full object-cover"
           />
