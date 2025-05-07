@@ -51,7 +51,14 @@ const OurSolutionsData = [
 
 const OurSolutions = () => {
   return (
-    <div className="flex max-w-[1440px] mx-auto py-[6.25em] flex-col gap-6 xl:gap-20 lg:px-10 px-5">
+    <div className="overflow-hidden relative">
+
+<img src="/assets/bg-7.jpg" className="absolute inset-0  w-full h-full " />
+    <div className="flex max-w-[1440px]   mx-auto py-[6.25em] flex-col gap-6 xl:gap-20 lg:px-10 px-5"
+    
+    >
+
+      
       <div className="flex flex-col md:flex-row gap-6">
         <div className="w-full md:w-1/2 flex items-start">
           <div
@@ -124,6 +131,7 @@ const OurSolutions = () => {
           ))}
         </Swiper>
       </div>
+    </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import Herosection from "./components/Herosection";
 import SocialMediaSection from './components/SocialMediaSection'
 import Posts from './components/Posts'
 import Locations from './components/Locations'
-import Careers  from './components/Careers'
+
 import Footer from './components/Footer'
 import OurSolutions from "./components/OurSolutions";
 import SocialResponsibility from "./components/SocialResponsibility";
@@ -25,7 +25,7 @@ export default function App() {
       <Posts />
       <Locations />
      
-      <Careers />
+     
       <Footer />
     </div>
   );
