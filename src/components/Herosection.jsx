@@ -95,6 +95,7 @@ export default function HeroSection() {
       {/* Static Background Image */}
       <img
         src="/assets/hero.jpg"
+        loading="lazy"
         alt="Hero Background"
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
       />
