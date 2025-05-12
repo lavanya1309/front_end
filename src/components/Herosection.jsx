@@ -103,7 +103,7 @@ export default function HeroSection() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
-      {/* Right-side Nav Links (Desktop Only) */}
+{/*      
       <div className="absolute top-80 right-16 z-20 text-white font-medium text-sm flex-col items-end space-y-2 leading-5 hidden md:flex">
         <a href="#">Home</a>
         <a href="#">About Us</a>
@@ -113,7 +113,7 @@ export default function HeroSection() {
         <a href="#">Projects</a>
         <a href="#">Contact Us</a>
       </div>
-      <div className="absolute top-80 right-12 h-[190px] border-[2px] border-white z-20 hidden md:block" />
+      <div className="absolute top-80 right-12 h-[190px] border-[2px] border-white z-20 hidden md:block" /> */}
 
       {/* Left-Aligned Heading */}
       <div className="relative z-20 flex top-20 flex-col items-start justify-center h-full px-6 text-white max-w-[90%] sm:max-w-[60%]">
@@ -126,12 +126,12 @@ export default function HeroSection() {
       </div>
 
    {/* Scroll Button (hidden on mobile) */}
-<button
+{/* <button
   onClick={scrollToNext}
   className="absolute left-10 bottom-10 z-30 w-14 h-14 bg-white rounded-full items-center justify-center font-medium hidden md:flex"
 >
   Scroll
-</button>
+</button> */}
 
 
       {/* Target for scroll button */}

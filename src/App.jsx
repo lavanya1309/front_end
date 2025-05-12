@@ -1,65 +1,4 @@
-// import Navbar from "./components/Navbar";
-// import Herosection from "./components/Herosection";
-// import SocialMediaSection from './components/SocialMediaSection'
-// import Posts from './components/Posts'
-// import Locations from './components/Locations'
 
-// import Footer from './components/Footer'
-// import OurSolutions from "./components/OurSolutions";
-// import SocialResponsibility from "./components/SocialResponsibility";
-// import SuccessStories from "./components/SuccessStories";
-// import About from "./components/About";
-// import TrustedBy from "./components/TrustedBy";
-
-// export default function App() {
-//   return (
-// <div className="min-h-screen w-full overflow-x-hidden">
-//       <Navbar />
-//       <Herosection />
-//       <About />
-//       <TrustedBy />
-//       <OurSolutions />
-//       <SocialResponsibility />
-//       <SuccessStories />
-//       <SocialMediaSection />
-//       <Posts />
-//       <Locations />
-     
-     
-//       <Footer />
-//     </div>
-//   );
-// }
-// import Navbar from "./components/Navbar";
-// import Herosection from "./components/Herosection";
-// import SocialMediaSection from './components/SocialMediaSection';
-// import Posts from './components/Posts';
-// import Locations from './components/Locations';
-
-// import Footer from './components/Footer';
-// import OurSolutions from "./components/OurSolutions";
-// import SocialResponsibility from "./components/SocialResponsibility";
-// import SuccessStories from "./components/SuccessStories";
-// import About from "./components/About";
-// import TrustedBy from "./components/TrustedBy";
-
-// export default function App() {
-//   return (
-//     <div className="min-h-screen w-full overflow-x-hidden bg-white relative">
-//       <Navbar />
-//       <Herosection />
-//       <About />
-//       <TrustedBy />
-//       <OurSolutions />
-//       <SocialResponsibility />
-//       <SuccessStories />
-//       <SocialMediaSection />
-//       <Posts />
-//       <Locations />
-//       <Footer />
-//     </div>
-//   );
-// }
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -85,12 +24,13 @@ import ProfessionalITServices from "./components/InnerPages/ProfessionalITServic
 import SecuritySystems from "./components/InnerPages/SecuritySystems"
 import SoftwareDevelopment from "./components/InnerPages/SoftwareDevelopment"
 import WebsiteDevelopment   from "./components/InnerPages/WebsiteDevelopment"
- 
 function Home() {
   return (
     <>
       <Herosection />
-      <About />
+      <div id="about">
+        <About />
+      </div>
       <TrustedBy />
       <OurSolutions />
       <SocialResponsibility />
@@ -101,6 +41,7 @@ function Home() {
     </>
   );
 }
+
 
 export default function App() {
   return (
@@ -122,7 +63,9 @@ export default function App() {
                         <Route path="/softwaredevelopment" element={<SoftwareDevelopment />} />
                           <Route path="/websitedevelopment" element={<WebsiteDevelopment />} />
         </Routes>
-        <Footer />
+         <div id="contact">
+      <Footer />
+    </div>
       </div>
     </Router>
   );
