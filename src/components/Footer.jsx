@@ -55,8 +55,17 @@ export default function Footer() {
            <ul className="space-y-3">
   <li><a href="/" className="hover:underline">Home</a></li>
   <li><a href="/#about" className="hover:underline">About Us</a></li>
-  <li><a href="/#services" className="hover:underline">Services</a></li>
-  <li><a href="/#contact" className="hover:underline">Contact Us</a></li>
+  <li><a href="/" className="hover:underline">Services</a></li>
+  <li>
+            <a
+              href="https://wa.me/+914442612928"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Contact Us
+            </a>
+          </li>
 </ul>
 
             </div>
@@ -131,13 +140,19 @@ export default function Footer() {
             </button>
             {openSections.general && (
               <ul className="space-y-3 pl-2 mt-2">
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Blogs</li>
-                <li>All Resources</li>
-                <li>Careers</li>
-                <li>Employee Login</li>
-                <li>Contact Us</li>
+                <li><a href="/" className="hover:underline">Home</a></li>
+  <li><a href="/#about" className="hover:underline">About Us</a></li>
+  <li><a href="/" className="hover:underline">Services</a></li>     
+                <li>
+            <a
+              href="https://wa.me/+914442612928"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Contact Us
+            </a>
+          </li>
               </ul>
             )}
           </div>
