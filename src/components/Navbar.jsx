@@ -488,7 +488,7 @@ export default function Navbar() {
           </li>
           <li>
             <a
-              href="https://wa.me/914442612928"
+              href="https://wa.me/+97142955299"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline"
@@ -521,7 +521,7 @@ export default function Navbar() {
 
         {/* Mobile Icons */}
         <div className="lg:hidden flex space-x-2">
-          <div className={`w-9 h-9 flex items-center justify-center border rounded-full ${
+          {/* <div className={`w-9 h-9 flex items-center justify-center border rounded-full ${
             scrolled ? "border-black text-black" : "border-white text-white"
           }`}>
             <Phone className="w-5 h-5" />
@@ -530,7 +530,7 @@ export default function Navbar() {
             scrolled ? "border-black text-black" : "border-white text-white"
           }`}>
             <User className="w-5 h-5" />
-          </div>
+          </div> */}
           <div
             onClick={() => setMobileMenuOpen(true)}
             className={`w-9 h-9 flex items-center justify-center border rounded-full cursor-pointer ${
