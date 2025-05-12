@@ -813,7 +813,6 @@
 //   );
 // }
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import {
   User,
   Server,
@@ -838,9 +837,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
-      if (showDropdown) {
-        setShowDropdown(false);
-      }
+      if (showDropdown) setShowDropdown(false);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -868,27 +865,27 @@ export default function Navbar() {
           scrolled ? "bg-white/80 backdrop-blur-md shadow-md text-black" : "bg-transparent text-white"
         }`}
       >
-        <Link href="/">
+        <a href="/">
           <img src="/assets/logo.png" alt="COMMNET Logo" className="h-12 w-auto cursor-pointer" />
-        </Link>
+        </a>
 
         <ul className="hidden lg:flex space-x-10 text-base font-medium text-inherit">
-          <li><Link href="#">Home</Link></li>
-          <li><Link href="#">About Us</Link></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
           <li onClick={() => setShowDropdown(!showDropdown)} className="relative cursor-pointer">
             <span>Services</span>
           </li>
-          <li><Link href="#">Contact Us</Link></li>
+          <li><a href="#">Contact Us</a></li>
         </ul>
 
         <div className="hidden lg:flex items-center space-x-4">
-          <Link href="#">
+          <a href="#">
             <button className={`px-4 py-2 rounded-full text-sm font-semibold ${
               scrolled ? "bg-black text-white" : "bg-white/10 backdrop-blur-md text-white"
             }`}>
               Contact Us
             </button>
-          </Link>
+          </a>
           <div className={`w-9 h-9 flex items-center justify-center border rounded-full ${
             scrolled ? "border-black text-black" : "border-white text-white"
           }`}>
@@ -925,19 +922,19 @@ export default function Navbar() {
             <p className="text-sm text-white/90">
               We offer the region's broadest portfolio of solutions, including industry-leading technology, security and infrastructure solutions.
             </p>
-            <Link href="#">
+            <a href="#">
               <button className="mt-6 w-fit bg-white text-black px-6 py-3 rounded-full text-sm font-semibold">
                 Read More
               </button>
-            </Link>
+            </a>
           </div>
 
           <div className="col-span-6 grid grid-cols-3 gap-4 px-6 border-r" data-aos="fade-down" data-aos-delay="200">
             {services.map((service, index) => (
-              <Link key={index} href={service.link} className="flex items-center space-x-3 hover:underline">
+              <a key={index} href={service.link} className="flex items-center space-x-3 hover:underline">
                 <div>{service.icon}</div>
                 <div className="text-sm font-medium">{service.label}</div>
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -976,7 +973,7 @@ export default function Navbar() {
           </div>
 
           <ul className="space-y-6 text-lg font-semibold">
-            <li><Link href="#">About Us</Link></li>
+            <li><a href="#">About Us</a></li>
             <li className="cursor-pointer" onClick={() => setMobileServicesOpen(!mobileServicesOpen)}>
               <div className="flex items-center justify-between">
                 <span>Services</span>
@@ -988,16 +985,16 @@ export default function Navbar() {
               <ul className="ml-4 mt-2 space-y-3 text-sm font-normal">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <Link href={service.link} className="flex items-center space-x-2">
+                    <a href={service.link} className="flex items-center space-x-2">
                       <span>{service.icon}</span>
                       <span>{service.label}</span>
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
             )}
-            <li><Link href="#">Resources</Link></li>
-            <li><Link href="#">Careers</Link></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Careers</a></li>
           </ul>
         </div>
       )}
