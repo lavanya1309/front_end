@@ -62,27 +62,37 @@
 // //         {/* Desktop Menu */}
 // //         <ul className="hidden lg:flex space-x-10 text-base font-medium text-inherit">
 // //           <li><a href="#">Home</a></li>
-// //         <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About Us</a></li>
-
+// //           <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About Us</a></li>
 // //           <li
 // //             onClick={() => setShowDropdown(!showDropdown)}
 // //             className="relative cursor-pointer"
 // //           >
 // //             <span>Services</span>
 // //           </li>
-// //      <li><a href="/#contact">Contact Us</a></li>
-
+// //           <li>
+// //             <a
+// //               href="https://wa.me/+97142955299"
+// //               target="_blank"
+// //               rel="noopener noreferrer"
+// //               className="hover:underline"
+// //             >
+// //               Contact Us
+// //             </a>
+// //           </li>
 // //         </ul>
 
 // //         {/* Desktop Buttons */}
 // //         <div className="hidden lg:flex items-center space-x-4">
-// //           <button
+// //           <a
+// //             href="https://wa.me/914442612928"
+// //             target="_blank"
+// //             rel="noopener noreferrer"
 // //             className={`px-4 py-2 rounded-full text-sm font-semibold ${
 // //               scrolled ? "bg-black text-white" : "bg-white/10 backdrop-blur-md text-white"
 // //             }`}
 // //           >
 // //             Contact Us
-// //           </button>
+// //           </a>
 // //           <div
 // //             className={`w-9 h-9 flex items-center justify-center border rounded-full ${
 // //               scrolled ? "border-black text-black" : "border-white text-white"
@@ -94,7 +104,7 @@
 
 // //         {/* Mobile Icons */}
 // //         <div className="lg:hidden flex space-x-2">
-// //           <div className={`w-9 h-9 flex items-center justify-center border rounded-full ${
+// //           {/* <div className={`w-9 h-9 flex items-center justify-center border rounded-full ${
 // //             scrolled ? "border-black text-black" : "border-white text-white"
 // //           }`}>
 // //             <Phone className="w-5 h-5" />
@@ -103,7 +113,7 @@
 // //             scrolled ? "border-black text-black" : "border-white text-white"
 // //           }`}>
 // //             <User className="w-5 h-5" />
-// //           </div>
+// //           </div> */}
 // //           <div
 // //             onClick={() => setMobileMenuOpen(true)}
 // //             className={`w-9 h-9 flex items-center justify-center border rounded-full cursor-pointer ${
@@ -118,7 +128,7 @@
 // //       {/* Desktop Services Dropdown */}
 // //       {showDropdown && (
 // //         <div className="hidden lg:grid fixed top-[65px] left-0 w-full z-40 px-12 py-12 bg-sky-600 text-white grid-cols-12 gap-6" data-aos="fade-down">
-// //           <div className="col-span-3 border-r pr-6" data-aos="fade-down" data-aos-delay="100">
+// //           <div className="col-span-3 border-r pr-6">
 // //             <h2 className="text-2xl font-bold mb-4">Solutions</h2>
 // //             <p className="text-sm text-white/90">
 // //               We offer the region's broadest portfolio of solutions, including
@@ -128,7 +138,7 @@
 // //               Read More
 // //             </button>
 // //           </div>
-// //           <div className="col-span-6 grid grid-cols-3 gap-4 px-6 border-r" data-aos="fade-down" data-aos-delay="200">
+// //           <div className="col-span-6 grid grid-cols-3 gap-4 px-6 border-r">
 // //             {services.map((service, index) => (
 // //               <a key={index} href={service.link} className="flex items-center space-x-3 hover:underline">
 // //                 <div>{service.icon}</div>
@@ -136,7 +146,7 @@
 // //               </a>
 // //             ))}
 // //           </div>
-// //           <div className="col-span-3" data-aos="fade-down" data-aos-delay="300">
+// //           <div className="col-span-3">
 // //             <h2 className="text-xl font-bold mb-4">Latest from COMMNET</h2>
 // //             <div className="space-y-4">
 // //               <div className="flex items-start space-x-3">
@@ -172,7 +182,7 @@
 // //           </div>
 
 // //           <ul className="space-y-6 text-lg font-semibold">
-// //             <li><a href="#">About Us</a></li>
+// //             <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About Us</a></li>
 // //             <li className="cursor-pointer" onClick={() => setMobileServicesOpen(!mobileServicesOpen)}>
 // //               <div className="flex items-center justify-between">
 // //                 <span>Services</span>
@@ -183,7 +193,7 @@
 // //               <ul className="ml-4 mt-2 space-y-3 text-sm font-normal">
 // //                 {services.map((service, index) => (
 // //                   <li key={index}>
-// //                     <a href={service.link} className="flex items-center space-x-2">
+// //                     <a href={service.link} className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
 // //                       <span>{service.icon}</span>
 // //                       <span>{service.label}</span>
 // //                     </a>
@@ -191,15 +201,34 @@
 // //                 ))}
 // //               </ul>
 // //             )}
-// //             <li><a href="#">contact us</a></li>
-           
+// //             <li>
+// //               <a
+// //                 href="https://wa.me/914442612928"
+// //                 target="_blank"
+// //                 rel="noopener noreferrer"
+// //                 onClick={() => setMobileMenuOpen(false)}
+// //               >
+// //                 Contact Us
+// //               </a>
+// //             </li>
 // //           </ul>
 // //         </div>
 // //       )}
+
+// //       {/* ✅ Floating WhatsApp Button */}
+// //       <a
+// //         href="https://wa.me/914442612928?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services"
+// //         target="_blank"
+// //         rel="noopener noreferrer"
+// //         className="fixed z-50 right-6 bottom-6 bg-[#25D366] hover:bg-[#1DA851] text-white p-4 rounded-full shadow-lg transition"
+// //       >
+// //         <img src="/assets/whatsapp-icon.png" alt="WhatsApp" className="w-6 h-6" />
+// //       </a>
 // //     </div>
 // //   );
 // // }
 // import { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
 // import {
 //   User,
 //   Server,
@@ -248,6 +277,7 @@
 
 //   return (
 //     <div className="relative font-['Lato']">
+//       {/* Navbar */}
 //       <nav
 //         data-aos="fade-down"
 //         className={`fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center transition-all duration-300 animate-fadeDown ${
@@ -269,29 +299,22 @@
 //             <span>Services</span>
 //           </li>
 //           <li>
-//             <a
-//               href="https://wa.me/+914442612928"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               className="hover:underline"
-//             >
+//             <Link to="/contactus" className="hover:underline">
 //               Contact Us
-//             </a>
+//             </Link>
 //           </li>
 //         </ul>
 
 //         {/* Desktop Buttons */}
 //         <div className="hidden lg:flex items-center space-x-4">
-//           <a
-//             href="https://wa.me/+914442612928"
-//             target="_blank"
-//             rel="noopener noreferrer"
+//           <Link
+//             to="/contactus"
 //             className={`px-4 py-2 rounded-full text-sm font-semibold ${
 //               scrolled ? "bg-black text-white" : "bg-white/10 backdrop-blur-md text-white"
 //             }`}
 //           >
 //             Contact Us
-//           </a>
+//           </Link>
 //           <div
 //             className={`w-9 h-9 flex items-center justify-center border rounded-full ${
 //               scrolled ? "border-black text-black" : "border-white text-white"
@@ -303,16 +326,6 @@
 
 //         {/* Mobile Icons */}
 //         <div className="lg:hidden flex space-x-2">
-//           <div className={`w-9 h-9 flex items-center justify-center border rounded-full ${
-//             scrolled ? "border-black text-black" : "border-white text-white"
-//           }`}>
-//             <Phone className="w-5 h-5" />
-//           </div>
-//           <div className={`w-9 h-9 flex items-center justify-center border rounded-full ${
-//             scrolled ? "border-black text-black" : "border-white text-white"
-//           }`}>
-//             <User className="w-5 h-5" />
-//           </div>
 //           <div
 //             onClick={() => setMobileMenuOpen(true)}
 //             className={`w-9 h-9 flex items-center justify-center border rounded-full cursor-pointer ${
@@ -327,7 +340,7 @@
 //       {/* Desktop Services Dropdown */}
 //       {showDropdown && (
 //         <div className="hidden lg:grid fixed top-[65px] left-0 w-full z-40 px-12 py-12 bg-sky-600 text-white grid-cols-12 gap-6" data-aos="fade-down">
-//           <div className="col-span-3 border-r pr-6" data-aos="fade-down" data-aos-delay="100">
+//           <div className="col-span-3 border-r pr-6">
 //             <h2 className="text-2xl font-bold mb-4">Solutions</h2>
 //             <p className="text-sm text-white/90">
 //               We offer the region's broadest portfolio of solutions, including
@@ -337,7 +350,7 @@
 //               Read More
 //             </button>
 //           </div>
-//           <div className="col-span-6 grid grid-cols-3 gap-4 px-6 border-r" data-aos="fade-down" data-aos-delay="200">
+//           <div className="col-span-6 grid grid-cols-3 gap-4 px-6 border-r">
 //             {services.map((service, index) => (
 //               <a key={index} href={service.link} className="flex items-center space-x-3 hover:underline">
 //                 <div>{service.icon}</div>
@@ -345,7 +358,7 @@
 //               </a>
 //             ))}
 //           </div>
-//           <div className="col-span-3" data-aos="fade-down" data-aos-delay="300">
+//           <div className="col-span-3">
 //             <h2 className="text-xl font-bold mb-4">Latest from COMMNET</h2>
 //             <div className="space-y-4">
 //               <div className="flex items-start space-x-3">
@@ -401,22 +414,26 @@
 //               </ul>
 //             )}
 //             <li>
-//               <a
-//                 href="https://wa.me/+914442612928"
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 onClick={() => setMobileMenuOpen(false)}
-//               >
+//               <Link to="/contactus" onClick={() => setMobileMenuOpen(false)}>
 //                 Contact Us
-//               </a>
+//               </Link>
 //             </li>
 //           </ul>
 //         </div>
 //       )}
+
+//       {/* Optional: Floating WhatsApp Button (can be removed or modified) */}
+//       <Link
+//         to="/contactus"
+//         className="fixed z-50 right-6 bottom-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition"
+//       >
+//         <img src="/assets/whatsapp-icon.png" alt="Contact Us" className="w-6 h-6" />
+//       </Link>
 //     </div>
 //   );
 // }
 import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   User,
   Server,
@@ -438,16 +455,36 @@ export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Scroll handler for sticky navbar
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
-      if (showDropdown) {
-        setShowDropdown(false);
-      }
+      if (showDropdown) setShowDropdown(false);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [showDropdown]);
+
+  // Scroll to About section logic
+  const handleAboutClick = () => {
+    if (location.pathname === "/") {
+      const aboutSection = document.getElementById("about");
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const aboutSection = document.getElementById("about");
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  };
 
   const services = [
     { icon: <Server />, label: "Enterprise Systems Group", link: "/enterprise-systems-group" },
@@ -465,7 +502,6 @@ export default function Navbar() {
 
   return (
     <div className="relative font-['Lato']">
-      {/* Navbar */}
       <nav
         data-aos="fade-down"
         className={`fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center transition-all duration-300 animate-fadeDown ${
@@ -474,12 +510,14 @@ export default function Navbar() {
             : "bg-transparent text-white"
         }`}
       >
-        <img src="/assets/logo-newone.png" alt="COMMNET Logo" className="h-12 w-auto" />
+        <Link to="/">
+          <img src="/assets/logo-newone.png" alt="COMMNET Logo" className="h-12 w-auto" />
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex space-x-10 text-base font-medium text-inherit">
-          <li><a href="#">Home</a></li>
-          <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About Us</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><button onClick={handleAboutClick}>About Us</button></li>
           <li
             onClick={() => setShowDropdown(!showDropdown)}
             className="relative cursor-pointer"
@@ -487,29 +525,22 @@ export default function Navbar() {
             <span>Services</span>
           </li>
           <li>
-            <a
-              href="https://wa.me/+97142955299"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
+            <Link to="/contactus" className="hover:underline">
               Contact Us
-            </a>
+            </Link>
           </li>
         </ul>
 
         {/* Desktop Buttons */}
         <div className="hidden lg:flex items-center space-x-4">
-          <a
-            href="https://wa.me/914442612928"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contactus"
             className={`px-4 py-2 rounded-full text-sm font-semibold ${
               scrolled ? "bg-black text-white" : "bg-white/10 backdrop-blur-md text-white"
             }`}
           >
             Contact Us
-          </a>
+          </Link>
           <div
             className={`w-9 h-9 flex items-center justify-center border rounded-full ${
               scrolled ? "border-black text-black" : "border-white text-white"
@@ -519,18 +550,8 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Icons */}
+        {/* Mobile Menu Button */}
         <div className="lg:hidden flex space-x-2">
-          {/* <div className={`w-9 h-9 flex items-center justify-center border rounded-full ${
-            scrolled ? "border-black text-black" : "border-white text-white"
-          }`}>
-            <Phone className="w-5 h-5" />
-          </div>
-          <div className={`w-9 h-9 flex items-center justify-center border rounded-full ${
-            scrolled ? "border-black text-black" : "border-white text-white"
-          }`}>
-            <User className="w-5 h-5" />
-          </div> */}
           <div
             onClick={() => setMobileMenuOpen(true)}
             className={`w-9 h-9 flex items-center justify-center border rounded-full cursor-pointer ${
@@ -542,7 +563,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Desktop Services Dropdown */}
+      {/* Services Dropdown */}
       {showDropdown && (
         <div className="hidden lg:grid fixed top-[65px] left-0 w-full z-40 px-12 py-12 bg-sky-600 text-white grid-cols-12 gap-6" data-aos="fade-down">
           <div className="col-span-3 border-r pr-6">
@@ -557,10 +578,10 @@ export default function Navbar() {
           </div>
           <div className="col-span-6 grid grid-cols-3 gap-4 px-6 border-r">
             {services.map((service, index) => (
-              <a key={index} href={service.link} className="flex items-center space-x-3 hover:underline">
+              <Link key={index} to={service.link} className="flex items-center space-x-3 hover:underline">
                 <div>{service.icon}</div>
                 <div className="text-sm font-medium">{service.label}</div>
-              </a>
+              </Link>
             ))}
           </div>
           <div className="col-span-3">
@@ -599,7 +620,8 @@ export default function Navbar() {
           </div>
 
           <ul className="space-y-6 text-lg font-semibold">
-            <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About Us</a></li>
+            <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
+            <li><button onClick={() => { setMobileMenuOpen(false); handleAboutClick(); }}>About Us</button></li>
             <li className="cursor-pointer" onClick={() => setMobileServicesOpen(!mobileServicesOpen)}>
               <div className="flex items-center justify-between">
                 <span>Services</span>
@@ -610,37 +632,26 @@ export default function Navbar() {
               <ul className="ml-4 mt-2 space-y-3 text-sm font-normal">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <a href={service.link} className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
+                    <Link to={service.link} className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
                       <span>{service.icon}</span>
                       <span>{service.label}</span>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             )}
-            <li>
-              <a
-                href="https://wa.me/914442612928"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Contact Us
-              </a>
-            </li>
+            <li><Link to="/contactus" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link></li>
           </ul>
         </div>
       )}
 
-      {/* ✅ Floating WhatsApp Button */}
-      <a
-        href="https://wa.me/914442612928?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed z-50 right-6 bottom-6 bg-[#25D366] hover:bg-[#1DA851] text-white p-4 rounded-full shadow-lg transition"
+      {/* WhatsApp Floating Button */}
+      <Link
+        to="/contactus"
+        className="fixed z-50 right-6 bottom-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition"
       >
-        <img src="/assets/whatsapp-icon.png" alt="WhatsApp" className="w-6 h-6" />
-      </a>
+        <img src="/assets/whatsapp-icon.png" alt="Contact Us" className="w-6 h-6" />
+      </Link>
     </div>
   );
 }
