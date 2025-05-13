@@ -6,48 +6,94 @@ const TrustedBy = () => {
           Trusted By
         </div>
         <div className="flex gap-[100px] grayscale-100 animate-scroll whitespace-nowrap ">
+         
           <img
-            src="https://gbm-bucket-storage.s3.me-central-1.amazonaws.com/1466/Cisco---Partner-logo-(1).svg"
+            src="./assets/Picture1.png"
             alt=""
             className="w-[140px]"
           />
           <img
-            src="https://gbm-bucket-storage.s3.me-central-1.amazonaws.com/1477/Fortinet-partner-latest.svg"
-            alt=""
-            className=" w-[140px]"
-          />
-          <img
-            src="https://gbm-bucket-storage.s3.me-central-1.amazonaws.com/1493/aws-(3).svg"
+            src="./assets/Picture2.png"
             alt=""
             className="w-[140px]"
           />
-          <img
-            src="https://gbm-bucket-storage.s3.me-central-1.amazonaws.com/1466/Cisco---Partner-logo-(1).svg"
+           <img
+            src="./assets/Picture3.png"
             alt=""
             className="w-[140px]"
           />
-          <img
-            src="https://gbm-bucket-storage.s3.me-central-1.amazonaws.com/1477/Fortinet-partner-latest.svg"
-            alt=""
-            className=" w-[140px]"
-          />
-          <img
-            src="https://gbm-bucket-storage.s3.me-central-1.amazonaws.com/1493/aws-(3).svg"
+           <img
+            src="./assets/Picture4.png"
             alt=""
             className="w-[140px]"
           />
-          <img
-            src="https://gbm-bucket-storage.s3.me-central-1.amazonaws.com/1466/Cisco---Partner-logo-(1).svg"
+           <img
+            src="./assets/Picture16.png"
             alt=""
             className="w-[140px]"
           />
-          <img
-            src="https://gbm-bucket-storage.s3.me-central-1.amazonaws.com/1477/Fortinet-partner-latest.svg"
+           <img
+            src="./assets/Picture17.png"
             alt=""
-            className=" w-[140px]"
+            className="w-[140px]"
           />
-          <img
-            src="https://gbm-bucket-storage.s3.me-central-1.amazonaws.com/1493/aws-(3).svg"
+           <img
+            src="./assets/Picture5.png"
+            alt=""
+            className="w-[140px]"
+          />
+           <img
+            src="./assets/Picture6.png"
+            alt=""
+            className="w-[140px]"
+          />
+           <img
+            src="./assets/Picture7.png"
+            alt=""
+            className="w-[140px]"
+          />
+           <img
+            src="./assets/Picture1.png"
+            alt=""
+            className="w-[140px]"
+          />
+           <img
+            src="./assets/Picture8.png"
+            alt=""
+            className="w-[140px]"
+          />
+           <img
+            src="./assets/Picture9.png"
+            alt=""
+            className="w-[140px]"
+          />
+           <img
+            src="./assets/Picture10.png"
+            alt=""
+            className="w-[140px]"
+          />
+           <img
+            src="./assets/Picture11.png"
+            alt=""
+            className="w-[140px]"
+          />
+           <img
+            src="./assets/Picture12.png"
+            alt=""
+            className="w-[140px]"
+          />
+           <img
+            src="./assets/Picture13.png"
+            alt=""
+            className="w-[140px]"
+          />
+           <img
+            src="./assets/Picture14.png"
+            alt=""
+            className="w-[140px]"
+          />
+           <img
+            src="./assets/Picture15.png"
             alt=""
             className="w-[140px]"
           />

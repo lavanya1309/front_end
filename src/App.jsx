@@ -78,7 +78,7 @@ import Footer from "./components/Footer";
 
 import Herosection from "./components/Herosection";
 import SocialMediaSection from './components/SocialMediaSection';
-import Posts from './components/Posts';
+// import Posts from './components/Posts';
 import Locations from './components/Locations';
 import OurSolutions from "./components/OurSolutions";
 import SocialResponsibility from "./components/SocialResponsibility";
@@ -99,6 +99,7 @@ import SecuritySystems from "./components/InnerPages/SecuritySystems";
 import SoftwareDevelopment from "./components/InnerPages/SoftwareDevelopment";
 import WebsiteDevelopment from "./components/InnerPages/WebsiteDevelopment";
 import Contactus from "./components/InnerPages/Contactus";
+import Aboutus from "./components/InnerPages/Aboutus"
 
 function Home() {
   return (
@@ -112,7 +113,7 @@ function Home() {
       <SocialResponsibility />
       <SuccessStories />
       <SocialMediaSection />
-      <Posts />
+      {/* <Posts /> */}
       <Locations />
     </>
   );
@@ -137,6 +138,7 @@ export default function App() {
           <Route path="/softwaredevelopment" element={<SoftwareDevelopment />} />
           <Route path="/websitedevelopment" element={<WebsiteDevelopment />} />
           <Route path="/contactus" element={<Contactus />} />
+          <Route path="/aboutus" element={<Aboutus />} />
         </Routes>
         <div id="contact">
           <Footer />

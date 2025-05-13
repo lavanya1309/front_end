@@ -517,7 +517,11 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden lg:flex space-x-10 text-base font-medium text-inherit">
           <li><Link to="/">Home</Link></li>
-          <li><button onClick={handleAboutClick}>About Us</button></li>
+          <li>
+            <Link to="/aboutus" className="hover:underline">
+              About Us
+            </Link>
+          </li>
           <li
             onClick={() => setShowDropdown(!showDropdown)}
             className="relative cursor-pointer"
@@ -533,21 +537,21 @@ export default function Navbar() {
 
         {/* Desktop Buttons */}
         <div className="hidden lg:flex items-center space-x-4">
-          <Link
+          {/* <Link
             to="/contactus"
             className={`px-4 py-2 rounded-full text-sm font-semibold ${
               scrolled ? "bg-black text-white" : "bg-white/10 backdrop-blur-md text-white"
             }`}
           >
             Contact Us
-          </Link>
-          <div
+          </Link> */}
+          {/* <div
             className={`w-9 h-9 flex items-center justify-center border rounded-full ${
               scrolled ? "border-black text-black" : "border-white text-white"
             }`}
           >
             <User className="w-5 h-5" />
-          </div>
+          </div> */}
         </div>
 
         {/* Mobile Menu Button */}

@@ -51,7 +51,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-sm">
             {/* General */}
             <div>
-              <h4 className="text-sky-700 font-semibold text-lg mb-3">General</h4>
+              <h4 className="text-sky-700 font-semibold text-lg mb-3">Useful Links</h4>
            <ul className="space-y-3">
   <li><a href="/" className="hover:underline">Home</a></li>
   <li><a href="/#about" className="hover:underline">About Us</a></li>
@@ -71,7 +71,7 @@ export default function Footer() {
             </div>
 
             {/* Solutions */}
-            <div>
+            {/* <div>
               <h4 className="text-sky-700 font-semibold text-lg mb-3">Solutions</h4>
         <ul className="space-y-3">
   <li><a href="/enterprise-systems-group" className="hover:underline">Technology Solutions</a></li>
@@ -83,7 +83,7 @@ export default function Footer() {
   <li><a href="#" className="hover:underline">Customer Experience</a></li>
 </ul>
 
-            </div>
+            </div> */}
 
             {/* Social */}
           <div>
@@ -135,7 +135,7 @@ export default function Footer() {
           {/* Accordion Sections */}
           <div className="border-t border-gray-300 pt-4" data-aos="fade-up">
             <button onClick={() => toggleSection("general")} className="w-full flex justify-between items-center py-3">
-              <span className="text-sky-700 font-semibold">General</span>
+              <span className="text-sky-700 font-semibold">Useful Links</span>
               <ChevronDown className={`w-5 h-5 transition-transform ${openSections.general ? "rotate-180" : ""}`} />
             </button>
             {openSections.general && (
@@ -157,7 +157,7 @@ export default function Footer() {
             )}
           </div>
 
-          <div className="border-t border-gray-300 pt-4" data-aos="fade-up">
+          {/* <div className="border-t border-gray-300 pt-4" data-aos="fade-up">
             <button onClick={() => toggleSection("solutions")} className="w-full flex justify-between items-center py-3">
               <span className="text-sky-700 font-semibold">Solutions</span>
               <ChevronDown className={`w-5 h-5 transition-transform ${openSections.solutions ? "rotate-180" : ""}`} />
@@ -173,7 +173,7 @@ export default function Footer() {
                 <li>Customer Experience</li>
               </ul>
             )}
-          </div>
+          </div> */}
 
           {/* Social Media */}
     <div className="border-t border-gray-300 pt-6" data-aos="fade-up">

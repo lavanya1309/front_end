@@ -116,49 +116,64 @@ const locations = [
     name: "Abu Dhabi - UAE",
     address:
       "30th Floor, Commercial Tower Al Wahda City 1 Hazza Bin Zayed Street, Abu Dhabi, United Arab Emirates",
-    lat: 24.4667,
-    lon: 54.3667,
+    lat: 25.13041002119675,
+    lon: 55.2306922373417,
   },
-  {
-    name: "Bahrain",
-    address:
-      "MS Center Office 51, 5th Floor Building, 22 Avenue 58, Al Seef District, Manama, Kingdom of Bahrain",
-    lat: 26.2285,
-    lon: 50.5861,
-  },
+  // {
+  //   name: "Bahrain",
+  //   address:
+  //     "MS Center Office 51, 5th Floor Building, 22 Avenue 58, Al Seef District, Manama, Kingdom of Bahrain",
+  //   lat: 26.2285,
+  //   lon: 50.5861,
+  // },
   {
     name: "Dubai - UAE",
     address:
       "Emarat Atrium Building, Block B, 3rd floor, Sheikh Zayed Road, Dubai, UAE",
-    lat: 25.2048,
-    lon: 55.2708,
+    lat: 25.13041002119675,
+    lon: 55.2306922373417,
+  },
+  // {
+  //   name: "Oman",
+  //   address:
+  //     "Al Rawaq, Building No: 7/1, Block 205, Way No: 58, Al Qurum, Muscat, Sultanate of Oman.",
+  //   lat: 23.5859,
+  //   lon: 58.4059,
+  // },
+  // {
+  //   name: "Singapore",
+  //   address: "Level 5, Marina Bay Financial Centre Tower 3, Singapore 018982",
+  //   lat: 1.2833,
+  //   lon: 103.86,
+  // },
+  {
+    name: "Mumbai - India ",
+    address:
+      "5, Bandra Kurla Complex Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051, India",
+    lat: 19.06020439782456,
+    lon: 72.8599431006252,
   },
   {
-    name: "Oman",
+    name: "Chennai - India",
     address:
-      "Al Rawaq, Building No: 7/1, Block 205, Way No: 58, Al Qurum, Muscat, Sultanate of Oman.",
-    lat: 23.5859,
-    lon: 58.4059,
+      "No:5,Shiyam Mythri flats,Flat no :3B, PT Rajan Rd, K. K. Nagar, Chennai, Tamil Nadu 600078, India",
+    lat: 13.037027458861171,
+    lon: 80.20425420326066,
   },
   {
-    name: "Singapore",
+    name: "Coimbatore - India",
     address:
-      "Level 5, Marina Bay Financial Centre Tower 3, Singapore 018982",
-    lat: 1.2833,
-    lon: 103.8600,
-  },
-  {
-    name: "India",
-    address:
-      "Commnet House, Sector 62, Noida, Uttar Pradesh, India",
-    lat: 28.6270,
-    lon: 77.3750,
+      "464, Beema Naidu Rd, G.V. Residency, Uppilipalayam, Coimbatore, Tamil Nadu 641015, India",
+    lat: 11.045219431347462,
+    lon: 77.00765979385952,
   },
 ];
 
 // Generate OpenStreetMap embed link with bounding box and marker
 const getMapEmbedUrl = (lat, lon) =>
-  `https://www.openstreetmap.org/export/embed.html?bbox=${lon - 0.02},${lat - 0.01},${lon + 0.02},${lat + 0.01}&layer=mapnik&marker=${lat},${lon}`;
+  `https://www.openstreetmap.org/export/embed.html?bbox=${lon - 0.02},${
+    lat - 0.01
+  },${lon + 0.02},${lat + 0.01}&layer=mapnik&marker=${lat},${lon}`;
 
 export default function GlobalPresence() {
   const [activeTab, setActiveTab] = useState(0);
@@ -192,12 +207,14 @@ export default function GlobalPresence() {
         className="text-center px-4 mb-2 max-w-screen-lg mx-auto"
         data-aos="fade-up"
       >
-        <div className="inline-block px-4 py-1 rounded-full border border-sky-500 text-sky-500 text-sm mb-2">
+        <div className="inline-block px-4 py-1 rounded-full border border-blue-500 text-blue-600 text-sm mb-2">
           Our Global Presence
         </div>
         <h2 className="text-lg md:text-4xl font-bold text-gray-800 mb-1">
           A local company with{" "}
-          <span className="text-sky-500 md:text-[#00A6A6]">Global Standards</span>
+          <span className="text-blue-600 md:text-blue-600">
+            Global Standards
+          </span>
         </h2>
       </div>
 
@@ -214,7 +231,7 @@ export default function GlobalPresence() {
               onClick={() => setActiveTab(index)}
               className={`py-1 px-3 text-sm font-medium focus:outline-none mx-1 ${
                 activeTab === index
-                  ? "bg-sky-100 text-sky-700 rounded-md border border-sky-300"
+                  ? "bg-sky-100 text-blue-700 rounded-md border border-blue-300"
                   : "text-gray-700"
               }`}
             >
@@ -232,7 +249,7 @@ export default function GlobalPresence() {
             onClick={() => setActiveTab(index)}
             className={`pb-2 text-lg font-semibold focus:outline-none ${
               activeTab === index
-                ? "border-b-4 border-[#00A6A6] text-[#00A6A6]"
+                ? "border-b-4 border-blue-600 text-blue-600"
                 : "text-gray-700"
             }`}
           >
@@ -265,7 +282,7 @@ export default function GlobalPresence() {
             </h3>
             <div className="flex items-start space-x-2">
               <svg
-                className="w-5 h-5 text-sky-500 mt-0.5 flex-shrink-0"
+                className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -276,7 +293,7 @@ export default function GlobalPresence() {
                 />
               </svg>
               <div className="flex-1 overflow-hidden">
-                <span className="text-sky-500 font-medium block mb-1 text-sm">
+                <span className="text-blue-600 font-medium block mb-1 text-sm">
                   Office Address
                 </span>
                 <p className="text-gray-700 text-xs leading-relaxed break-words pr-2">
@@ -284,7 +301,7 @@ export default function GlobalPresence() {
                 </p>
               </div>
             </div>
-            <button className="mt-4 py-2 bg-sky-500 hover:bg-sky-600 text-white font-medium text-center w-full rounded">
+            <button className="mt-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium text-center w-full rounded">
               Explore
             </button>
           </div>
@@ -301,9 +318,9 @@ export default function GlobalPresence() {
           <h3 className="text-3xl font-bold text-gray-800">
             {locations[activeTab].name}
           </h3>
-          <div className="mt-4 flex items-center gap-2 text-[#00A6A6] font-semibold">
+          <div className="mt-4 flex items-center gap-2 text-blue-600 font-semibold">
             <svg
-              className="w-5 h-5 text-[#00A6A6]"
+              className="w-5 h-5 text-red-600"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -314,7 +331,7 @@ export default function GlobalPresence() {
           <p className="mt-2 text-gray-700 leading-relaxed">
             {locations[activeTab].address}
           </p>
-          <button className="mt-6 px-6 py-2 bg-[#00A6A6] hover:bg-[#008080] text-white rounded-full font-semibold">
+          <button className="mt-6 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold">
             Explore
           </button>
         </div>
