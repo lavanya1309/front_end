@@ -421,7 +421,9 @@ export default function EnterpriseSystemsGroup() {
                 "Installation of Cabinets (Servers & Network Cabinets)",
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
+                  <div>
                   <FaCheckCircle className="text-red-600 mt-1" />
+                  </div>
                   <span>{item}</span>
                 </div>
               ))}

@@ -30,6 +30,8 @@ import Contactus from "./components/InnerPages/Contactus";
 import Aboutus from "./components/InnerPages/Aboutus"
 import Partners from "./components/Partners"
 import { useEffect } from "react";
+import TermsAndConditions from "./components/InnerPages/TermsAndConditions";
+import PrivacyPolicy from "./components/InnerPages/PrivacyPolicy";
 
 
 
@@ -79,7 +81,9 @@ export default function App() {
           <Route path="/softwaredevelopment" element={<SoftwareDevelopment />} />
           <Route path="/websitedevelopment" element={<WebsiteDevelopment />} />
           <Route path="/contactus" element={<Contactus />} />
-          <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/aboutus" element={< Aboutus/>} />
+          <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+          <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
         </Routes>
      
           <Footer />

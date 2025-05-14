@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   User,
   Server,
@@ -15,6 +14,7 @@ import {
   X,
   ChevronDown,
 } from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -22,53 +22,74 @@ export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  // Scroll handler for sticky navbar
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
-      if (showDropdown) setShowDropdown(false);
+      if (showDropdown) {
+        setShowDropdown(false);
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [showDropdown]);
 
-  // Scroll to About section logic
-  const handleAboutClick = () => {
-    if (location.pathname === "/") {
-      const aboutSection = document.getElementById("about");
-      if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      navigate("/");
-      setTimeout(() => {
-        const aboutSection = document.getElementById("about");
-        if (aboutSection) {
-          aboutSection.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
-    }
-  };
 
+
+
+
+
+
+
+  
   const services = [
-    { icon: <Server />, label: "Enterprise Systems Group", link: "/enterprise-systems-group" },
-    { icon: <Shield />, label: "Information Security", link: "/informationsecurity" },
+    {
+      icon: <Server />,
+      label: "Enterprise Systems Group",
+      link: "/enterprise-systems-group",
+    },
+    {
+      icon: <Shield />,
+      label: "Information Security",
+      link: "/informationsecurity",
+    },
     { icon: <Globe />, label: "IoT Services", link: "/iotservices" },
     { icon: <Cpu />, label: "Power Solutions", link: "/powersolutions" },
-    { icon: <MonitorSmartphone />, label: "AV Solutions", link: "/avsolutions" },
-    { icon: <Code2 />, label: "Professional IT Services", link: "/professionalitservices" },
-    { icon: <Server />, label: "Infrastructure Systems Group", link: "/infrastructuresystemgroup" },
-    { icon: <Code2 />, label: "Website Development", link: "/websitedevelopment" },
-    { icon: <Code2 />, label: "Software Development", link: "/softwaredevelopment" },
+    {
+      icon: <MonitorSmartphone />,
+      label: "AV Solutions",
+      link: "/avsolutions",
+    },
+    {
+      icon: <Code2 />,
+      label: "Professional IT Services",
+      link: "/professionalitservices",
+    },
+    {
+      icon: <Server />,
+      label: "Infrastructure Systems Group",
+      link: "/infrastructuresystemgroup",
+    },
+    {
+      icon: <Code2 />,
+      label: "Website Development",
+      link: "/websitedevelopment",
+    },
+    {
+      icon: <Code2 />,
+      label: "Software Development",
+      link: "/softwaredevelopment",
+    },
     { icon: <Lock />, label: "Security Systems", link: "/securitysystems" },
-    { icon: <Shield />, label: "Cyber Security Services", link: "/cybersecurityservices" },
+    {
+      icon: <Shield />,
+      label: "Cyber Security Services",
+      link: "/cybersecurityservices",
+    },
   ];
 
   return (
     <div className="relative font-['Lato']">
+      {/* Navbar */}
       <nav
         data-aos="fade-down"
         className={`fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center transition-all duration-300 animate-fadeDown ${
@@ -77,42 +98,52 @@ export default function Navbar() {
             : "bg-transparent text-white"
         }`}
       >
-        <Link to="/">
-          <img src="/assets/logo-newone.png" alt="COMMNET Logo" className="h-12 w-auto" />
-        </Link>
+        <img
+          src="/assets/logo-newone.png"
+          alt="COMMNET Logo"
+          className="h-12 w-auto"
+        />
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex space-x-10 text-base font-medium text-inherit">
-          <li><Link to="/">Home</Link></li>
           <li>
-            <Link to="/aboutus" className="hover:underline">
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/aboutus" onClick={() => setMobileMenuOpen(false)}>
               About Us
-            </Link>
+            </a>
           </li>
           <li
-            onClick={() => setShowDropdown(!showDropdown)}
+            // onClick={() => setShowDropdown(!showDropdown)}
+            onMouseEnter={() => setShowDropdown(!showDropdown)}
             className="relative cursor-pointer"
           >
             <span>Services</span>
           </li>
           <li>
-            <Link to="/contactus" className="hover:underline">
+            <a href="/contactus" onClick={() => setMobileMenuOpen(false)}>
               Contact Us
-            </Link>
+            </a>
+          
           </li>
         </ul>
 
         {/* Desktop Buttons */}
         <div className="hidden lg:flex items-center space-x-4">
-          {/* <Link
-            to="/contactus"
+          {/* <a
+            href="https://wa.me/914442612928"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`px-4 py-2 rounded-full text-sm font-semibold ${
-              scrolled ? "bg-black text-white" : "bg-white/10 backdrop-blur-md text-white"
+              scrolled
+                ? "bg-black text-white"
+                : "bg-white/10 backdrop-blur-md text-white"
             }`}
           >
             Contact Us
-          </Link> */}
-          {/* <div
+          </a>
+          <div
             className={`w-9 h-9 flex items-center justify-center border rounded-full ${
               scrolled ? "border-black text-black" : "border-white text-white"
             }`}
@@ -121,8 +152,18 @@ export default function Navbar() {
           </div> */}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Icons */}
         <div className="lg:hidden flex space-x-2">
+          {/* <div className={`w-9 h-9 flex items-center justify-center border rounded-full ${
+            scrolled ? "border-black text-black" : "border-white text-white"
+          }`}>
+            <Phone className="w-5 h-5" />
+          </div>
+          <div className={`w-9 h-9 flex items-center justify-center border rounded-full ${
+            scrolled ? "border-black text-black" : "border-white text-white"
+          }`}>
+            <User className="w-5 h-5" />
+          </div> */}
           <div
             onClick={() => setMobileMenuOpen(true)}
             className={`w-9 h-9 flex items-center justify-center border rounded-full cursor-pointer ${
@@ -134,14 +175,18 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Services Dropdown */}
+      {/* Desktop Services Dropdown */}
       {showDropdown && (
-        <div className="hidden lg:grid fixed top-[65px] left-0 w-full z-40 px-12 py-12 bg-sky-600 text-white grid-cols-12 gap-6" data-aos="fade-down">
+        <div
+          className="hidden lg:grid fixed top-[65px] left-0 w-full z-40 px-12 py-12 bg-sky-600 text-white grid-cols-12 gap-6"
+          data-aos="fade-down"
+        >
           <div className="col-span-3 border-r pr-6">
             <h2 className="text-2xl font-bold mb-4">Solutions</h2>
             <p className="text-sm text-white/90">
               We offer the region's broadest portfolio of solutions, including
-              industry-leading technology, security and infrastructure solutions.
+              industry-leading technology, security and infrastructure
+              solutions.
             </p>
             <button className="mt-6 w-fit bg-white text-black px-6 py-3 rounded-full text-sm font-semibold">
               Read More
@@ -149,27 +194,42 @@ export default function Navbar() {
           </div>
           <div className="col-span-6 grid grid-cols-3 gap-4 px-6 border-r">
             {services.map((service, index) => (
-              <Link key={index} to={service.link} className="flex items-center space-x-3 hover:underline">
+              <NavLink
+                key={index}
+                to={service.link}
+                onClick={() => showDropdown(false)}
+                className="flex items-center space-x-3 hover:underline"
+              >
                 <div>{service.icon}</div>
                 <div className="text-sm font-medium">{service.label}</div>
-              </Link>
+              </NavLink>
             ))}
           </div>
           <div className="col-span-3">
             <h2 className="text-xl font-bold mb-4">Latest from COMMNET</h2>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <img src="/assets/press-4.jpg" className="w-12 h-12 object-cover rounded-md" />
+                <img
+                  src="/assets/press-4.jpg"
+                  className="w-12 h-12 object-cover rounded-md"
+                />
                 <div>
                   <p className="text-sm font-semibold">Technology Solutions</p>
-                  <p className="text-xs text-white/80">Bring your digital agenda to reality.</p>
+                  <p className="text-xs text-white/80">
+                    Bring your digital agenda to reality.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <img src="/assets/press-3.jpg" className="w-12 h-12 object-cover rounded-md" />
+                <img
+                  src="/assets/press-3.jpg"
+                  className="w-12 h-12 object-cover rounded-md"
+                />
                 <div>
                   <p className="text-sm font-semibold">Security Solutions</p>
-                  <p className="text-xs text-white/80">Next-Gen Cyber Defense For A Safer Digital Tomorrow.</p>
+                  <p className="text-xs text-white/80">
+                    Next-Gen Cyber Defense For A Safer Digital Tomorrow.
+                  </p>
                 </div>
               </div>
             </div>
@@ -191,40 +251,85 @@ export default function Navbar() {
           </div>
 
           <ul className="space-y-6 text-lg font-semibold">
-            <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
-            <li><button onClick={() => { setMobileMenuOpen(false); handleAboutClick(); }}>About Us</button></li>
-            <li className="cursor-pointer" onClick={() => setMobileServicesOpen(!mobileServicesOpen)}>
+             <li>
+            <a href="/">Home</a>
+          </li>
+            <li>
+              <a href="#about" onClick={() => setMobileMenuOpen(false)}>
+                About Us
+              </a>
+            </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+            >
               <div className="flex items-center justify-between">
                 <span>Services</span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${
+                    mobileServicesOpen ? "rotate-180" : ""
+                  }`}
+                />
               </div>
             </li>
             {mobileServicesOpen && (
               <ul className="ml-4 mt-2 space-y-3 text-sm font-normal">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <Link to={service.link} className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
+                    <a
+                      href={service.link}
+                      className="flex items-center space-x-2"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       <span>{service.icon}</span>
                       <span>{service.label}</span>
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
             )}
-            <li><Link to="/contactus" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link></li>
+           <li>
+            <a href="/contactus" onClick={() => setMobileMenuOpen(false)}>
+              Contact Us
+            </a>
+          
+          </li>
           </ul>
         </div>
       )}
 
-      {/* WhatsApp Floating Button */}
-<a
+      {/* ✅ Floating WhatsApp Button */}
+      {/* <a
+        href="https://wa.me/+971526965307?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed z-50 right-6 bottom-6  text-white   transition"
+      >
+        <img
+          src="/assets/watsapp-1.png"
+          alt="WhatsApp"
+          className="w-10 h-10"
+        />
+      </a> */}
+      <div className="fixed bottom-16 right-6 z-50 text-center">
+ <p className={`text-sm font-semibold transition-colors duration-300 ${scrolled ? 'text-black' : 'text-white'} mr-2`}>
+    <span>Need Help?</span>
+  </p>
+  <a
   href="https://wa.me/+971526965307?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="fixed z-50 right-6 bottom-6 transition"
->
-  <img src="/assets/watsapp-1.png" alt="WhatsApp" className="w-10 h-10" />
-</a>
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block mt-1"
+  >
+    <img
+      src="/assets/watsapp-1.png"
+      alt="WhatsApp"
+      className="w-12 h-12"
+    />
+  </a>
+
+
 </div>
+    </div>
   );
 }

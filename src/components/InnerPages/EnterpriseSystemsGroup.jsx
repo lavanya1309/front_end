@@ -221,19 +221,19 @@ export default function EnterpriseSystemsGroup() {
           ))}
         </Swiper>
 
-        <button
+        {/* <button
           className="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 text-black"
           onClick={() => NavigationRef.current?.slidePrev()}
         >
           <FaChevronLeft size={20} />
-        </button>
+        </button> */}
 
-        <button
+        {/* <button
           className="absolute right-4 sm:right-10 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 text-black"
           onClick={() => NavigationRef.current?.slideNext()}
         >
           <FaChevronRight size={20} />
-        </button>
+        </button> */}
       </div>
     </div>
   );

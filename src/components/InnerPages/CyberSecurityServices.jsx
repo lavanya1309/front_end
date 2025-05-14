@@ -237,7 +237,7 @@ import "swiper/css/effect-coverflow";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import HeroBg from "/assets/ES-1.jpg";
-import OverviewImg from "/assets/ES-2.jpg";
+import OverviewImg from "/assets/IS-3.jpg";
 
 const TechnologyData = [
   {

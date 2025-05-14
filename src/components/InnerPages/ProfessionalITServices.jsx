@@ -144,7 +144,7 @@ export default function EnterpriseSystemsGroup() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-sky-600">Professional Service Group</h2>
             <p className="text-gray-600 mb-4">
-             Our Staffing division places top technology professionals in contract, contract-to-hire, direct hire and SOW / Statement of Work based positions with industry leaders and innovative start-ups that are developing the next generation of technology solutions. Commnet’s flexible cost-effective delivery models feature dedicated account teams, skill-based recruiters and proven systems and processes. Our Consultant care teams are unique in the industry and ensure a satisfactory assignment for both Consultant and Client.
+             Our Staffing division places top technology professionals in contract, contract-to-hire, direct hire and SOW / Statement of Work based positions with industry leaders and innovative start-ups that are developing the next generation of technology solutions. Commnet’s flexible cost-effective delivery models feature dedicated account teams, <br/>   skill-based  recruiters and proven systems and processes. Our Consultant care teams are unique in the industry and ensure a satisfactory assignment for both Consultant and Client.
 
  
             </p>
