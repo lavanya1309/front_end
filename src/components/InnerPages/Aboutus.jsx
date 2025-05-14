@@ -1,4 +1,12 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function Aboutus() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
   return (
     <>
       <div className="container mx-auto min-h-screen">
@@ -6,7 +14,7 @@ function Aboutus() {
           className="h-[70vh] bg-gray-50 bg-cover bg-no-repeat"
           style={{
             backgroundImage:
-              "url('https://img.freepik.com/free-vector/circuit-board-neon-background_23-2148335792.jpg?uid=R195687753&ga=GA1.1.1998257103.1744360169&semt=ais_hybrid&w=740')",
+              "url('https://img.freepik.com/free-vector/circuit-board-neon-background_23-2148335792.jpg')",
           }}
         >
           <div className="h-full flex justify-center items-center">
@@ -16,10 +24,10 @@ function Aboutus() {
           </div>
         </div>
         <div className="min-h-screen flex max-w-[1440px] mx-auto py-[6.25em] flex-col gap-6 xl:gap-20 lg:px-10 px-5 font-sans">
-          <AboutDetails />
-          <MissionAndVision />
-          <AboutCards />
-          <OurJourney />
+          <div data-aos="fade-up"><AboutDetails /></div>
+          <div data-aos="fade-up" data-aos-delay="100"><MissionAndVision /></div>
+          <div data-aos="fade-up" data-aos-delay="200"><AboutCards /></div>
+          <div data-aos="fade-up" data-aos-delay="300"><OurJourney /></div>
         </div>
       </div>
     </>
@@ -35,13 +43,13 @@ const AboutDetails = () => {
         Who We Are
       </div>
       <p className="text-2xl font-semibold tracking-tight text-justify">
-        At <span className="text-blue-600">Commnet</span> , we strive to deliver
+        At <span className="text-blue-600">Commnet</span>, we strive to deliver
         value through the combination of right people, processes, technologies
-        and program management solutions. Our methods include- applying domain
+        and program management solutions. Our methods include applying domain
         expertise in specific industry segments, utilizing a highly-skilled
         workforce, leveraging a proven global delivery model, implementing
         structured and scalable quality processes and methodologies and yet,
-        staying cost-effective
+        staying cost-effective.
       </p>
     </div>
   );
@@ -50,7 +58,7 @@ const AboutDetails = () => {
 const MissionAndVision = () => {
   return (
     <div className="h-full text-black flex flex-col lg:flex-row gap-6">
-      <div className=" h-full w-full flex flex-col items-start ">
+      <div className="h-full w-full flex flex-col items-start">
         <div className="p-8 flex flex-col gap-4 bg-blue-100 rounded-2xl">
           <h3 className="text-3xl font-bold">Our Mission</h3>
           <p className="text-xl font-medium">
@@ -58,7 +66,7 @@ const MissionAndVision = () => {
             purposeful execution.
           </p>
         </div>
-        <div className="p-8 flex flex-col gap-4 ">
+        <div className="p-8 flex flex-col gap-4">
           <h3 className="text-3xl font-bold">Our Vision</h3>
           <p className="text-xl">
             Inspiring lasting impact through purpose, <br /> passion, and
@@ -66,7 +74,7 @@ const MissionAndVision = () => {
           </p>
         </div>
       </div>
-      <div className="bg-green-50 w-full ">
+      <div className="bg-green-50 w-full">
         <iframe
           src="https://www.commnetsysconsult.com/wp-content/uploads/2023/02/Commnet-LLC-Video-Whatsapp.mp4"
           className="min-w-full h-[400px] object-cover rounded-xl"
@@ -102,7 +110,7 @@ const AboutCards = () => {
       id: "04",
       title: "Cost-Effective Solutions",
       description:
-        " Delivering high-value outcomes without compromising on quality.",
+        "Delivering high-value outcomes without compromising on quality.",
     },
   ];
   return (
@@ -126,63 +134,6 @@ const AboutCards = () => {
     </div>
   );
 };
-
-// const OurJourney = () => {
-//   const Datas = [
-//     {
-//       count: "20+",
-//       description: "Started in the early 2000s as a 2-member consulting team.",
-//       title: "Years of Experience",
-//     },
-//     {
-//       count: "200%",
-//       description:
-//         "Achieved rapid growth and became a well-known IT consulting firm.",
-//       title: "Consistent Growth",
-//     },
-//     {
-//       count: "5",
-//       description:
-//         "Headquartered in Dubai with branches in India, Muscat, Qatar, and Singapore.",
-//       title: "Countries Global Reach",
-//     },
-//   ];
-//   return (
-//     <div
-//       className="min-h-screen bg-current bg-cover bg-no-repeat bg-bottom rounded-3xl"
-//       style={{
-//         backgroundImage: "url('/assets/press-2.jpg  ')",
-//       }}
-//     >
-//       <div className="p-6 flex flex-col gap-4 h-full justify-between">
-//         <div className="h-full"></div>
-
-//         <div className="h-full flex gap-4 flex-col lg:flex-row">
-//           <div className="">
-//             <h1 className="text-3xl font-semibold text-white">Our Journey</h1>
-//             <p className="text-xl font-medium text-white w-[60%]">
-//               Commnet started in the early 2000s as a two-member IT consulting
-//               firm and rapidly grew into a well-known company with offices in
-//               Dubai, India, Muscat, Qatar, and Singapore, employing hundreds
-//               today.
-//             </p>
-//           </div>
-//           <div className="gap-6 grid sm:grid-cols-2 lg:grid-cols-3 w-full">
-//             {Datas.map((data, index) => (
-//               <div
-//                 className="p-6 bg-white/20 backdrop-blur-md text-white rounded-2xl"
-//                 key={index}
-//               >
-//                 <p className="text-3xl font-semibold">{data.count}</p>
-//                 <p className="text-nowrap">{data.title}</p>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 
 const OurJourney = () => {
   const Datas = [

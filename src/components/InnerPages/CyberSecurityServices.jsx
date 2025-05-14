@@ -371,7 +371,7 @@ export default function EnterpriseSystemsGroup() {
         >
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Enterprise Systems Group
+         Cyber Security
             </h2>
             <div className="space-y-6 text-gray-800 leading-relaxed text-base md:text-lg">
               <p>
@@ -433,7 +433,7 @@ export default function EnterpriseSystemsGroup() {
           centeredSlides={true}
           loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false,
           }}
           onSwiper={(swiper) => {

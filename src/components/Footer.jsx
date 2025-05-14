@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -20,16 +21,17 @@ export default function Footer() {
       [key]: !prev[key],
     }));
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+ 
   return (
     <footer
       className="bg-sky-100 bg-cover bg-no-repeat bg-bottom font-['Lato'] text-gray-700 pt-16"
       style={{ backgroundImage: "url('/assets/bg-7.jpg')" }}
     >
       <div className="max-w-[1440px] mx-auto px-6">
-        {/* Grid for large screens */}
         <div className="hidden lg:grid grid-cols-[1fr_1.5fr] gap-12">
-          {/* Left Side */}
           <div data-aos="fade-up">
             <img src="/assets/logo.png" alt="Commnet Logo" className="w-[160px] mb-6" />
             <p className="text-[17px] leading-relaxed max-w-md">
@@ -47,74 +49,47 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right Side */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-sm">
-            {/* General */}
             <div>
               <h4 className="text-sky-700 font-semibold text-lg mb-3">Useful Links</h4>
-           <ul className="space-y-3">
-  <li><a href="/" className="hover:underline">Home</a></li>
-  <li><a href="/#about" className="hover:underline">About Us</a></li>
-  <li><a href="/" className="hover:underline">Services</a></li>
-  <li>
-            <a
-              href="https://wa.me/+914442612928"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              Contact Us
-            </a>
-          </li>
-</ul>
-
+              <ul className="space-y-3">
+                <li><a href="/" className="hover:underline">Home</a></li>
+                <li><a href="/#about" className="hover:underline">About Us</a></li>
+                <li><a href="/" className="hover:underline">Services</a></li>
+                <li>
+                  <a href="/contactus" className="hover:underline">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            {/* Solutions */}
-            {/* <div>
-              <h4 className="text-sky-700 font-semibold text-lg mb-3">Solutions</h4>
-        <ul className="space-y-3">
-  <li><a href="/enterprise-systems-group" className="hover:underline">Technology Solutions</a></li>
-  <li><a href="/cybersecurityservices" className="hover:underline">Security Solutions</a></li>
-  <li><a href="/infrastructuresystemgroup" className="hover:underline">Infrastructure Solutions</a></li>
-  <li><a href="#" className="hover:underline">Managed Services</a></li>
-  <li><a href="#" className="hover:underline">Hybrid IT & Cloud Services</a></li>
-  <li><a href="#" className="hover:underline">Technical Support Services</a></li>
-  <li><a href="#" className="hover:underline">Customer Experience</a></li>
-</ul>
+            <div>
+              <h4 className="text-sky-700 font-semibold text-lg mb-3">Social Media</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <i className="fab fa-facebook-f text-sky-600 w-5"></i>
+                  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    Facebook
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <i className="fab fa-instagram text-sky-600 w-5"></i>
+                  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    Instagram
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <i className="fab fa-linkedin-in text-sky-600 w-5"></i>
+                  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            </div> */}
-
-            {/* Social */}
-          <div>
-  <h4 className="text-sky-700 font-semibold text-lg mb-3">Social Media</h4>
-  <div className="space-y-3">
-    <div className="flex items-center gap-3">
-      <i className="fab fa-facebook-f text-sky-600 w-5"></i>
-      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
-        Facebook
-      </a>
-    </div>
-    <div className="flex items-center gap-3">
-      <i className="fab fa-instagram text-sky-600 w-5"></i>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
-        Instagram
-      </a>
-    </div>
-   
-    <div className="flex items-center gap-3">
-      <i className="fab fa-linkedin-in text-sky-600 w-5"></i>
-      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
-        LinkedIn
-      </a>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-
-
-        {/* Accordion for Mobile */}
         <div className="lg:hidden flex flex-col gap-6 text-sm mt-10">
           <img src="/assets/logo.png" alt="Commnet Logo" className="w-[140px]" data-aos="fade-up" />
           <p className="text-[15px] leading-relaxed" data-aos="fade-up">
@@ -132,7 +107,6 @@ export default function Footer() {
             <button className="bg-sky-600 text-white px-6 py-2 mt-4 rounded-full">Subscribe</button>
           </div>
 
-          {/* Accordion Sections */}
           <div className="border-t border-gray-300 pt-4" data-aos="fade-up">
             <button onClick={() => toggleSection("general")} className="w-full flex justify-between items-center py-3">
               <span className="text-sky-700 font-semibold">Useful Links</span>
@@ -141,83 +115,43 @@ export default function Footer() {
             {openSections.general && (
               <ul className="space-y-3 pl-2 mt-2">
                 <li><a href="/" className="hover:underline">Home</a></li>
-  <li><a href="/#about" className="hover:underline">About Us</a></li>
-  <li><a href="/" className="hover:underline">Services</a></li>     
+                <li><a href="/#about" className="hover:underline">About Us</a></li>
+                <li><a href="/" className="hover:underline">Services</a></li>
                 <li>
-            <a
-              href="https://wa.me/+914442612928"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              Contact Us
-            </a>
-          </li>
+                 <a href="/contactus" className="hover:underline">
+                    Contact Us
+                  </a>
+                </li>
               </ul>
             )}
           </div>
 
-          {/* <div className="border-t border-gray-300 pt-4" data-aos="fade-up">
-            <button onClick={() => toggleSection("solutions")} className="w-full flex justify-between items-center py-3">
-              <span className="text-sky-700 font-semibold">Solutions</span>
-              <ChevronDown className={`w-5 h-5 transition-transform ${openSections.solutions ? "rotate-180" : ""}`} />
-            </button>
-            {openSections.solutions && (
-              <ul className="space-y-3 pl-2 mt-2">
-                <li>Technology Solutions</li>
-                <li>Security Solutions</li>
-                <li>Infrastructure Solutions</li>
-                <li>Managed Services</li>
-                <li>Hybrid IT & Cloud Services</li>
-                <li>Technical Support Services</li>
-                <li>Customer Experience</li>
-              </ul>
-            )}
-          </div> */}
+          <div className="border-t border-gray-300 pt-6" data-aos="fade-up">
+            <h4 className="text-sky-700 font-semibold text-lg mb-3">Social Media</h4>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <i className="fab fa-facebook-f text-sky-600 w-5"></i>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  Facebook
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <i className="fab fa-instagram text-sky-600 w-5"></i>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  Instagram
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <i className="fab fa-linkedin-in text-sky-600 w-5"></i>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          {/* Social Media */}
-    <div className="border-t border-gray-300 pt-6" data-aos="fade-up">
-  <h4 className="text-sky-700 font-semibold text-lg mb-3">Social Media</h4>
-  <div className="space-y-3">
-    <div className="flex items-center gap-3">
-      <i className="fab fa-facebook-f text-sky-600 w-5"></i>
-      <a
-        href="https://www.facebook.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:underline"
-      >
-        Facebook
-      </a>
-    </div>
-    <div className="flex items-center gap-3">
-      <i className="fab fa-instagram text-sky-600 w-5"></i>
-      <a
-        href="https://www.instagram.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:underline"
-      >
-        Instagram
-      </a>
-    </div>
-    <div className="flex items-center gap-3">
-      <i className="fab fa-linkedin-in text-sky-600 w-5"></i>
-      <a
-        href="https://www.linkedin.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:underline"
-      >
-        LinkedIn
-      </a>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-
-      {/* Bottom Bar */}
       <div className="text-sm text-gray-600 border-t border-gray-300 mt-10 pt-5 flex flex-col md:flex-row justify-between items-center px-6 max-w-[1440px] mx-auto pb-6">
         <p>
           © 2025 <span className="text-sky-700 font-semibold">Commnet</span>. All Rights Reserved.

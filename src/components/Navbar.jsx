@@ -650,12 +650,14 @@ export default function Navbar() {
       )}
 
       {/* WhatsApp Floating Button */}
-      <Link
-        to="/contactus"
-        className="fixed z-50 right-6 bottom-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition"
-      >
-        <img src="/assets/whatsapp-icon.png" alt="Contact Us" className="w-6 h-6" />
-      </Link>
-    </div>
+<a
+  href="https://wa.me/914442612928?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed z-50 right-6 bottom-6 transition"
+>
+  <img src="/assets/watsapp-1.png" alt="WhatsApp" className="w-10 h-10" />
+</a>
+</div>
   );
 }
