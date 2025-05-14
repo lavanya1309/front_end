@@ -204,9 +204,9 @@ const SocialMediaSection = () => {
     <section className="bg-[#f8f4fa] py-16 font-['Lato'] relative overflow-hidden px-6 md:px-16">
       <div className="container mx-auto" data-aos="fade-up">
         <h2 className="text-left sm:text-center text-xl sm:text-2xl md:text-3xl font-semibold font-['Plus Jakarta Sans'] text-[#3b0b6e] leading-snug px-4 mb-10 break-words">
-          <span className="text-[#8d3dae] block sm:inline">Connect</span> and
-          follow us on
-          <span className="text-[#222] block sm:inline">social media</span>
+          <span className="text-sky-600 block sm:inline">Connect</span> <span className="text-sky-600">and follow us on </span>
+          
+          <span className="text-red-600 block sm:inline">social media</span>
         </h2>
       </div>
 
@@ -237,7 +237,7 @@ const SocialMediaSection = () => {
                         alt="COMMNET"
                         className="w-10 h-10 object-contain rounded-full"
                       />
-                      <span className="font-medium text-purple-800">
+                      <span className="font-medium text-sky-600">
                         COMMNET
                       </span>
                     </div>

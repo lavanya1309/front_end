@@ -371,9 +371,9 @@ export default function EnterpriseSystemsGroup() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Software Development
             </h1>
-            <button className="mt-4 bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-full text-sm">
+            {/* <button className="mt-4 bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-full text-sm">
               Get in touch
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
@@ -390,7 +390,7 @@ export default function EnterpriseSystemsGroup() {
         >
           {/* Left: Text */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4  text-sky-600">
               Software Development
             </h2>
             <p className="text-gray-600 mb-4">
@@ -411,7 +411,7 @@ export default function EnterpriseSystemsGroup() {
                 "Customized Softwares",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-blue-500 mt-1" />
+                  <FaCheckCircle className="text-red-600 mt-1" />
                   <span>{item}</span>
                 </li>
               ))}

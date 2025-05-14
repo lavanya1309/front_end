@@ -1,137 +1,290 @@
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation, Pagination } from "swiper/modules";
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
+// // import { Swiper, SwiperSlide } from "swiper/react";
+// // import { Navigation, Pagination } from "swiper/modules";
+// // import "swiper/css";
+// // import "swiper/css/navigation";
+// // import "swiper/css/pagination";
 
-// const OurSolutionsData = [
+// // const OurSolutionsData = [
+// //   {
+// //     title: "Technology Solutions",
+// //     description:
+// //       "Leaders in the digital economy are able to stay ahead by embracing the opportunities that are made possible by digital transformation.",
+// //     links: [
+// //       { link: "IBM Solutions" },
+// //       { link: "Digital Automation" },
+// //       { link: "AIOps" },
+// //       { link: "Enterprise Application Solution" },
+// //     ],
+// //   },
+// //   {
+// //     title: "Cloud Infrastructure",
+// //     description:
+// //       "Scalable, secure, and reliable cloud platforms to support your digital growth and operational resilience.",
+// //     links: [
+// //       { link: "Hybrid Cloud" },
+// //       { link: "Public Cloud" },
+// //       { link: "Private Cloud" },
+// //       { link: "Cloud Security" },
+// //     ],
+// //   },
+// //   {
+// //     title: "Cybersecurity Solutions",
+// //     description:
+// //       "Protect your digital assets and ensure compliance with industry standards using modern cybersecurity frameworks.",
+// //     links: [
+// //       { link: "Risk Management" },
+// //       { link: "Zero Trust Security" },
+// //       { link: "Threat Detection" },
+// //     ],
+// //   },
+// //   {
+// //     title: "AI & Data Analytics",
+// //     description:
+// //       "Protect your digital assets and ensure compliance with industry standards using modern cybersecurity frameworks.",
+// //     links: [
+// //       { link: "Predictive Analytics" },
+// //       { link: "Natural Language Processing" },
+// //       { link: "Data Lakes" },
+// //     ],
+// //   },
+// // ];
+
+// // const OurSolutions = () => {
+// //   return (
+// //     <div className="overflow-hidden relative">
+
+// // <img src="/assets/bg-7.jpg" className="absolute inset-0  w-full h-full " />
+// //     <div className="flex max-w-[1440px]   mx-auto py-[6.25em] flex-col gap-6 xl:gap-20 lg:px-10 px-5"
+    
+// //     >
+
+      
+// //       <div className="flex flex-col md:flex-row gap-6">
+// //         <div className="w-full md:w-1/2 flex items-start">
+// //           <div
+// //             data-aos="fade-right"
+// //             className="border px-4 py-2 rounded-xl font-medium lg:text-2xl"
+// //           >
+// //             Our Solutions
+// //           </div>
+// //         </div>
+// //         <h2
+// //           data-aos="fade-left"
+// //           className="text-[2em] lg:text-[2.5em] xl:text-[3em] font-semibold tracking-tighter leading-[1.14] mb-0"
+// //         >
+// //           Turn your business vision into reality with end-to-end{" "}
+// //           <span className="text-blue-700">IT Solutions</span>
+// //         </h2>
+// //       </div>
+
+// //       <div className="flex flex-wrap gap-6">
+// //         <Swiper
+// //           modules={[Pagination]}
+// //           //   navigation
+// //           //   pagination={{ clickable: true }}
+// //           spaceBetween={24}
+// //           breakpoints={{
+// //             320: { slidesPerView: 1.1 },
+// //             640: { slidesPerView: 1.5 },
+// //             768: { slidesPerView: 2 },
+// //             1024: { slidesPerView: 3 },
+// //             1280: { slidesPerView: 3.2 },
+// //           }}
+// //           className="transition-transform duration-300"
+// //         >
+// //           {OurSolutionsData.map((solution, index) => (
+// //             <SwiperSlide key={index} className="rounded-2xl">
+// //               <div
+// //                 data-aos="fade-up"
+// //                 data-aos-delay={index * 100}
+// //                 className="bg-white p-6 rounded-2xl transition ease-in-out duration-300 h-full group"
+// //               >
+// //                 <p className="text-sm text-gray-500 mb-4">
+// //                   {String(index + 1).padStart(2, "0")}
+// //                 </p>
+// //                 <div className="flex flex-col gap-4">
+// //                   <p className="text-[2em] leading-tight font-semibold mb-2">
+// //                     {solution.title}
+// //                   </p>
+// //                   <p className="text-gray-700 text-base tracking-tight mb-4">
+// //                     {solution.description}
+// //                   </p>
+// //                 </div>
+
+// //                 <div className="flex flex-col justify-between gap-4 mt-4">
+// //                   <ul className="text-sm space-y-1 grid-cols-2 grid">
+// //                     {solution.links.map((item, i) => (
+// //                       <li
+// //                         key={i}
+// //                         className="text-blue-700 hover:underline cursor-pointer line-clamp-1"
+// //                       >
+// //                         {item.link}
+// //                       </li>
+// //                     ))}
+// //                   </ul>
+// //                   <div className="text-blue-700 hover:underline cursor-pointer">
+// //                     Find More
+// //                   </div>
+// //                 </div>
+// //               </div>
+// //             </SwiperSlide>
+// //           ))}
+// //         </Swiper>
+// //       </div>
+// //     </div>
+// //     </div>
+// //   );
+// // };
+
+// // export default OurSolutions;
+// import { useEffect } from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Pagination } from "swiper/modules";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
+
+// const solutionsWithContent = [
 //   {
-//     title: "Technology Solutions",
+//     title: "Enterprise Systems Group",
 //     description:
-//       "Leaders in the digital economy are able to stay ahead by embracing the opportunities that are made possible by digital transformation.",
-//     links: [
-//       { link: "IBM Solutions" },
-//       { link: "Digital Automation" },
-//       { link: "AIOps" },
-//       { link: "Enterprise Application Solution" },
-//     ],
+//       "Organizations are looking at ways to meet the IT demands of business while providing innovative services that give them business agility and competitive advantage. One of the key focuses of commnet DC Transformation and Operation services is the dynamic alignment of business requirements and IT systems that deliver efficiencies that drive down costs, optimize resources, and enable innovation. Enterprises are witnessing exponential growths, with innovation in supply chain, multiple delivery channels for customers and their relationships with global spread.",
+//     link: "/enterprise-systems-group",
 //   },
 //   {
-//     title: "Cloud Infrastructure",
+//     title: "Information Security",
 //     description:
-//       "Scalable, secure, and reliable cloud platforms to support your digital growth and operational resilience.",
-//     links: [
-//       { link: "Hybrid Cloud" },
-//       { link: "Public Cloud" },
-//       { link: "Private Cloud" },
-//       { link: "Cloud Security" },
-//     ],
+//       "ISO/IEC 27001 is a standard designed to ensure the selection of adequate and proportionate security controls to help you manage and protect your valuable information assets. Our security consultants evaluate your organisation's security policies, procedures, standards and organisation structure against the ISO27001 standard.",
+//     link: "/informationsecurity",
 //   },
 //   {
-//     title: "Cybersecurity Solutions",
+//     title: "Internet of Things (IoT)",
 //     description:
-//       "Protect your digital assets and ensure compliance with industry standards using modern cybersecurity frameworks.",
-//     links: [
-//       { link: "Risk Management" },
-//       { link: "Zero Trust Security" },
-//       { link: "Threat Detection" },
-//     ],
+//       "The Internet of Things is here and information access to the network is even more profound as homes, buildings, offices and even the whole city begins to connect to each other, providing a whole new experience of a connected world and a seamless virtual reality which can only be made possible through strong connectivity.",
+//     link: "/iotservices",
 //   },
 //   {
-//     title: "AI & Data Analytics",
+//     title: "Power Solutions",
 //     description:
-//       "Protect your digital assets and ensure compliance with industry standards using modern cybersecurity frameworks.",
-//     links: [
-//       { link: "Predictive Analytics" },
-//       { link: "Natural Language Processing" },
-//       { link: "Data Lakes" },
-//     ],
+//       "Our goal is ensure a secure supply of energy and cooling for you.\n\nAREAS OF EXPERTISE:\n- UPS and Power Distribution Systems\n- Security, Real Time Monitoring, Management & Control Systems\n- Emergency Diesel Generators\n- Cooling Systems",
+//     link: "/powersolutions",
+//   },
+//   {
+//     title: "AV Solutions",
+//     description:
+//       "Commnet deploy our design talents and engineering capabilities to deliver customized user-friendly AV solutions that meet client expectations, budgets and timeframes.\n\nAREAS OF EXPERTISE:\n- Intelligent Video Solutions for Educational, Medical and Law Enforcement\n- Command & Control Centers and Crisis Management Centers\n- Theaters, Auditoriums and Multi-purpose Halls\n- Smart Meeting Rooms, and Innovation Centers",
+//     link: "/avsolutions",
+//   },
+//   {
+//     title: "Professional IT Services",
+//     description:
+//       "Expert technical solutions customized to enterprise needs across infrastructure, development, and deployment.",
+//     link: "/professionalitservices",
+//   },
+//   {
+//     title: "Infrastructure Systems Group",
+//     description:
+//       "Commnet has a specialized team of cabling professionals trained and experienced on various low current solutions. We undertake turnkey ELV projects from scratch and commission them to best industry standards.\n\nBe it coaxial cabling for traditional analog video, CCTV, latest technology enhanced IP-based CCTV/IPTV, UTP & Fiber cabling for high-speed data needs.",
+//     link: "/infrastructuresystemgroup",
+//   },
+//   {
+//     title: "Website Development",
+//     description:
+//       "Creative website development tailored for optimal UX, responsiveness, and business growth.",
+//     link: "/websitedevelopment",
+//   },
+//   {
+//     title: "Software Development",
+//     description:
+//       "We are Developing Best Website and Customized Softwares with cutting edge technology applications.\n\nWe are the most experienced and highly trusted Website and Software Development Company in Dubai. Our best professional team design both Software and Websites starting from small startups to large enterprises.",
+//     link: "/softwaredevelopment",
+//   },
+//   {
+//     title: "Security Systems",
+//     description:
+//       "We are dedicated to build positive relationships with our customers by understanding our client’s business needs and provide them with the most professional and high quality services that fulfill them, whether its Residential, Retail, Commercial, Industrial or Governmental.",
+//     link: "/securitysystems",
+//   },
+//   {
+//     title: "Cyber Security Services",
+//     description:
+//       "In today’s hyper-connected world, cybersecurity is no longer an option—it is a necessity. As businesses undergo digital transformation, the attack surface expands, leaving organizations vulnerable to ever-evolving cyber threats. At Commnet, we understand the critical need for a comprehensive cybersecurity strategy that protects your digital assets while enabling growth and innovation.",
+//     link: "/cybersecurityservices",
 //   },
 // ];
 
 // const OurSolutions = () => {
+//   useEffect(() => {
+//     AOS.init({ duration: 800, once: true });
+//   }, []);
+
 //   return (
-//     <div className="overflow-hidden relative">
+//     <div className="relative overflow-hidden bg-white">
+//       {/* Background Image */}
+//       <img
+//         src="/assets/bg-7.jpg"
+//         alt="bg"
+//         className="absolute inset-0 w-full h-full object-cover z-0"
+//       />
+//       {/* Overlay */}
+//       <div className="absolute inset-0 bg-white/80 z-0" />
 
-// <img src="/assets/bg-7.jpg" className="absolute inset-0  w-full h-full " />
-//     <div className="flex max-w-[1440px]   mx-auto py-[6.25em] flex-col gap-6 xl:gap-20 lg:px-10 px-5"
-    
-//     >
-
-      
-//       <div className="flex flex-col md:flex-row gap-6">
-//         <div className="w-full md:w-1/2 flex items-start">
-//           <div
-//             data-aos="fade-right"
-//             className="border px-4 py-2 rounded-xl font-medium lg:text-2xl"
-//           >
-//             Our Solutions
+//       {/* Content */}
+//       <div className="relative z-10 max-w-[1440px] mx-auto py-20 px-5 lg:px-10">
+//         <div className="flex flex-col md:flex-row gap-6 mb-10" data-aos="fade-up">
+//           <div>
+//             <div className="border px-4 py-2 rounded-xl font-medium text-xl lg:text-2xl bg-white/80 w-fit">
+//               Our Solutions
+//             </div>
 //           </div>
+//           <h2 className="text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight leading-snug text-sky-600">
+//             Turn your business vision into reality with{" "}
+//             <span className="text-red-600">end-to-end IT Solutions</span>
+//           </h2>
 //         </div>
-//         <h2
-//           data-aos="fade-left"
-//           className="text-[2em] lg:text-[2.5em] xl:text-[3em] font-semibold tracking-tighter leading-[1.14] mb-0"
-//         >
-//           Turn your business vision into reality with end-to-end{" "}
-//           <span className="text-blue-700">IT Solutions</span>
-//         </h2>
-//       </div>
 
-//       <div className="flex flex-wrap gap-6">
 //         <Swiper
 //           modules={[Pagination]}
-//           //   navigation
-//           //   pagination={{ clickable: true }}
+//           pagination={{ clickable: true }}
 //           spaceBetween={24}
 //           breakpoints={{
-//             320: { slidesPerView: 1.1 },
+//             320: { slidesPerView: 1.2 },
 //             640: { slidesPerView: 1.5 },
 //             768: { slidesPerView: 2 },
 //             1024: { slidesPerView: 3 },
-//             1280: { slidesPerView: 3.2 },
 //           }}
-//           className="transition-transform duration-300"
+//           className="pb-12"
 //         >
-//           {OurSolutionsData.map((solution, index) => (
-//             <SwiperSlide key={index} className="rounded-2xl">
+//           {solutionsWithContent.map((solution, index) => (
+//             <SwiperSlide key={index}>
 //               <div
+//                 className="bg-white rounded-2xl shadow-md p-6 h-[360px] w-[340px] mx-auto flex flex-col justify-between overflow-hidden"
 //                 data-aos="fade-up"
 //                 data-aos-delay={index * 100}
-//                 className="bg-white p-6 rounded-2xl transition ease-in-out duration-300 h-full group"
 //               >
-//                 <p className="text-sm text-gray-500 mb-4">
-//                   {String(index + 1).padStart(2, "0")}
-//                 </p>
-//                 <div className="flex flex-col gap-4">
-//                   <p className="text-[2em] leading-tight font-semibold mb-2">
-//                     {solution.title}
+//                 <div>
+//                   <p className="text-sm text-gray-500 mb-1">
+//                     {String(index + 1).padStart(2, "0")}
 //                   </p>
-//                   <p className="text-gray-700 text-base tracking-tight mb-4">
+//                   <h3 className="text-lg font-semibold mb-2">
+//                     {solution.title}
+//                   </h3>
+//                   <p className="text-gray-700 text-sm whitespace-pre-line line-clamp-[8]">
 //                     {solution.description}
 //                   </p>
 //                 </div>
-
-//                 <div className="flex flex-col justify-between gap-4 mt-4">
-//                   <ul className="text-sm space-y-1 grid-cols-2 grid">
-//                     {solution.links.map((item, i) => (
-//                       <li
-//                         key={i}
-//                         className="text-blue-700 hover:underline cursor-pointer line-clamp-1"
-//                       >
-//                         {item.link}
-//                       </li>
-//                     ))}
-//                   </ul>
-//                   <div className="text-blue-700 hover:underline cursor-pointer">
-//                     Find More
-//                   </div>
-//                 </div>
+//                 <a
+//                   href={solution.link}
+//                   className="text-sky-600 text-sm font-medium mt-4 hover:underline"
+//                 >
+//                   Find More
+//                 </a>
 //               </div>
 //             </SwiperSlide>
 //           ))}
 //         </Swiper>
 //       </div>
-//     </div>
 //     </div>
 //   );
 // };
@@ -179,7 +332,7 @@ const solutionsWithContent = [
   {
     title: "Professional IT Services",
     description:
-      "Expert technical solutions customized to enterprise needs across infrastructure, development, and deployment.",
+      "Expert technical solutions customized to enterprise needs across infrastructure, development, and deployment.These services are tailored to align with an organization’s goals, improve efficiency, ensure data security, and support digital transformation.",
     link: "/professionalitservices",
   },
   {
@@ -191,7 +344,7 @@ const solutionsWithContent = [
   {
     title: "Website Development",
     description:
-      "Creative website development tailored for optimal UX, responsiveness, and business growth.",
+      "Creative website development tailored for optimal UX, responsiveness, and business growth.Static Website, Dynamic and ResponsiveWordPress, SitesE-commerce, SitesLMS ,SiteCRM ,SitesLearning Management.",
     link: "/websitedevelopment",
   },
   {
@@ -221,16 +374,13 @@ const OurSolutions = () => {
 
   return (
     <div className="relative overflow-hidden bg-white">
-      {/* Background Image */}
       <img
         src="/assets/bg-7.jpg"
         alt="bg"
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
-      {/* Overlay */}
       <div className="absolute inset-0 bg-white/80 z-0" />
 
-      {/* Content */}
       <div className="relative z-10 max-w-[1440px] mx-auto py-20 px-5 lg:px-10">
         <div className="flex flex-col md:flex-row gap-6 mb-10" data-aos="fade-up">
           <div>
@@ -238,9 +388,9 @@ const OurSolutions = () => {
               Our Solutions
             </div>
           </div>
-          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight leading-snug">
+          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight leading-snug text-sky-600">
             Turn your business vision into reality with{" "}
-            <span className="text-blue-700">end-to-end IT Solutions</span>
+            <span className="text-red-600">end-to-end IT Solutions</span>
           </h2>
         </div>
 
@@ -249,17 +399,17 @@ const OurSolutions = () => {
           pagination={{ clickable: true }}
           spaceBetween={24}
           breakpoints={{
-            320: { slidesPerView: 1.2 },
-            640: { slidesPerView: 1.5 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            320: { slidesPerView: 1.1, spaceBetween: 20 },
+            640: { slidesPerView: 1.5, spaceBetween: 24 },
+            768: { slidesPerView: 2, spaceBetween: 24 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
           }}
-          className="pb-12"
+          className="!pb-10 "
         >
           {solutionsWithContent.map((solution, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className="!ml-2 !mr-2">
               <div
-                className="bg-white rounded-2xl shadow-md p-6 h-[360px] w-[340px] mx-auto flex flex-col justify-between overflow-hidden"
+                className="bg-white rounded-2xl shadow-md p-6 h-[360px] w-[320px] mx-auto flex flex-col justify-between overflow-hidden"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
@@ -276,7 +426,7 @@ const OurSolutions = () => {
                 </div>
                 <a
                   href={solution.link}
-                  className="text-blue-700 text-sm font-medium mt-4 hover:underline"
+                  className="text-sky-600 text-sm font-medium mt-4 hover:underline"
                 >
                   Find More
                 </a>

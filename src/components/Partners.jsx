@@ -96,7 +96,7 @@ const TrustedBy = () => {
 
       <div className="relative z-10 w-full px-4">
         <h2 className="text-center text-xl font-semibold text-sky-700 mb-8">
-          Trusted By Global Leaders
+          Trusted By 
         </h2>
 
         {/* Continuous Marquee */}

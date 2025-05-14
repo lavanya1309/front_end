@@ -394,7 +394,7 @@ export default function EnterpriseSystemsGroup() {
         >
           {/* Left: Text */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4  text-sky-600">
               Website Development
             </h2>
             <p className="text-gray-600 mb-4">
@@ -420,7 +420,7 @@ export default function EnterpriseSystemsGroup() {
                 "Learning Management",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-blue-500 mt-1" />
+                  <FaCheckCircle className="text-red-600 mt-1" />
                   <span>{item}</span>
                 </li>
               ))}

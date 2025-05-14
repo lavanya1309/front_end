@@ -309,9 +309,9 @@ export default function GlobalPresence() {
         <div className="inline-block px-4 py-1 rounded-full border border-sky-500 text-sky-600 text-sm mb-2">
           Our Global Presence
         </div>
-        <h2 className="text-lg md:text-4xl font-bold text-gray-800 mb-1">
+        <h2 className="text-lg md:text-4xl font-bold text-sky-600 mb-1">
           A local company with{" "}
-          <span className="text-sky-600 md:text-sky-600">
+          <span className="text-sky-600 md:text-red-600">
             Global Standards
           </span>
         </h2>

@@ -126,9 +126,9 @@ export default function EnterpriseSystemsGroup() {
             <p className="text-base sm:text-lg md:text-xl">
               Delivering agility and innovation through optimized IT systems.
             </p>
-            <button className="mt-4 bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-full text-sm">
+            {/* <button className="mt-4 bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-full text-sm">
               Get in touch
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
@@ -145,7 +145,7 @@ export default function EnterpriseSystemsGroup() {
           data-aos="fade-up"
         >
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6  text-sky-600">
               Enterprise Systems Group
             </h2>
             <div className="space-y-6 text-gray-800 leading-relaxed text-base md:text-lg">

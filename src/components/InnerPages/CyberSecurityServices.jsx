@@ -352,9 +352,9 @@ export default function EnterpriseSystemsGroup() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Cyber Security Services
             </h1>
-            <button className="mt-4 bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-full text-sm">
+            {/* <button className="mt-4 bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-2 rounded-full text-sm">
               Get in touch
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
@@ -370,7 +370,7 @@ export default function EnterpriseSystemsGroup() {
           data-aos="fade-up"
         >
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6  text-sky-600">
          Cyber Security
             </h2>
             <div className="space-y-6 text-gray-800 leading-relaxed text-base md:text-lg">

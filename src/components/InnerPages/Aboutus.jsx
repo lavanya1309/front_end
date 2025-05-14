@@ -39,11 +39,11 @@ export default Aboutus;
 const AboutDetails = () => {
   return (
     <div className="flex flex-col gap-4 font-sans">
-      <div className="text-[2em] lg:text-[2.5em] xl:text-[3em] font-semibold tracking-tighter leading-[1.14] mb-0">
+      <div className="text-[2em] lg:text-[2.5em] xl:text-[3em] font-semibold tracking-tighter leading-[1.14] mb-0 text-sky-600">
         Who We Are
       </div>
       <p className="text-2xl font-semibold tracking-tight text-justify">
-        At <span className="text-blue-600">Commnet</span>, we strive to deliver
+        At <span className="text-red-600">Commnet</span>, we strive to deliver
         value through the combination of right people, processes, technologies
         and program management solutions. Our methods include applying domain
         expertise in specific industry segments, utilizing a highly-skilled
@@ -124,7 +124,7 @@ const AboutCards = () => {
             {data.id}
           </p>
           <div className="flex flex-col gap-4">
-            <p className="text-2xl font-semibold tracking-tight capitalize leading-7 mt-6 text-blue-700">
+            <p className="text-2xl font-semibold tracking-tight capitalize leading-7 mt-6 text-sky-600">
               {data.title}
             </p>
             <p className="text-lg leading-6 line-clamp-3">{data.description}</p>

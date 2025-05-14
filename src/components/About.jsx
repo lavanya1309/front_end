@@ -64,7 +64,7 @@ const About = () => {
       <div className="flex items-start flex-col gap-6 max-w-[300px] w-full">
         <div
           data-aos="fade-right"
-          className="border px-4 py-2 rounded-xl font-medium lg:text-2xl"
+          className="border px-4 py-2 rounded-xl font-medium lg:text-2xl "
         >
           About COMMNET
         </div>
@@ -88,7 +88,7 @@ const About = () => {
           data-aos="fade-up"
           className="text-[2em] lg:text-[2.5em] xl:text-[3em] font-semibold tracking-tighter leading-[1.14] mb-0"
         >
-          At <span className="text-blue-700">COMMNET, </span>
+          At <span className="text-sky-600">COMMNET, </span>
           we deliver value by combining the right people, processes,
           technologies, and proven methodologies to offer scalable,
           cost-effective solutions tailored to client needs
@@ -116,7 +116,7 @@ const About = () => {
         <div className="flex justify-between items-start w-full flex-col lg:flex-row gap-8">
           <button
             data-aos="fade-up"
-            className="rounded-xl bg-blue-700 text-white px-4 py-2"
+            className="rounded-xl bg-sky-600 text-white px-4 py-2"
             onClick={() => navigate("/aboutus")}
           >
             Read More

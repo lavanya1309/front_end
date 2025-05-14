@@ -396,7 +396,7 @@ export default function EnterpriseSystemsGroup() {
         >
           {/* Left Text Section */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Infrastructure Systems Group</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4  text-sky-600">Infrastructure Systems Group</h2>
             <p className="text-gray-600 mb-4">
               Commnet has a specialized team of cabling professionals trained and experienced on various low current solutions.
               We undertake turnkey ELV projects from scratch and commission them to best industry standards.
@@ -421,7 +421,7 @@ export default function EnterpriseSystemsGroup() {
                 "Installation of Cabinets (Servers & Network Cabinets)",
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-blue-500 mt-1" />
+                  <FaCheckCircle className="text-red-600 mt-1" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -483,7 +483,7 @@ export default function EnterpriseSystemsGroup() {
                 </p>
                 <a
                   href={technology.link}
-                  className="bg-blue-600 px-5 py-2 rounded-xl"
+                  className="bg-sky-600 px-5 py-2 rounded-xl"
                 >
                   Read More
                 </a>

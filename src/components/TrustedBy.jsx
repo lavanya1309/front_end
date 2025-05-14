@@ -91,7 +91,7 @@ const TrustedBy = () => {
         data-aos="fade-up"
       >
         <div className="border px-4 py-2 rounded-xl font-medium lg:text-2xl bg-white bg-opacity-80">
-          Trusted By
+         <span className="text-sky-600">Our </span> <span className="text-red-600">Clients</span>
         </div>
 
         {/* Infinite Edge-to-Edge Scrolling Logos */}

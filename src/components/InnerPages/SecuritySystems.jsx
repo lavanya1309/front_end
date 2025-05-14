@@ -399,7 +399,7 @@ export default function EnterpriseSystemsGroup() {
         >
           {/* Left: Text */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Security Systems</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4  text-sky-600">Security Systems</h2>
             <p className="text-gray-600 mb-4">
               We are dedicated to build positive relationships with our customers by understanding our client’s
               business needs and provide them with the most professional and high quality services that fulfill them,
@@ -427,7 +427,7 @@ export default function EnterpriseSystemsGroup() {
                 "AV Intercom",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-blue-500 mt-1" />
+                  <FaCheckCircle className="text-sky-600 mt-1" />
                   <span>{item}</span>
                 </li>
               ))}
