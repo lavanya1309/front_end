@@ -8,7 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -21,33 +20,39 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run ESLint (optional, ignore errors)
-        run: npm run lint || true
-
+      - name: Run ESLint (optional)
+        run: npm run lint
+      
       - name: Build React + Vite app
         run: npm run build
 
-      - name: Copy build files to EC2
+      - name: Copy files to EC2
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          source: "dist/"
-          target: "/var/www/html/front_end"
+          source: dist/
+          target: /var/www/html/front_end  # Deploy to the correct web root
 
-      - name: SSH into EC2 and serve the app (optional)
+      - name: SSH into EC2 and configure/start the app
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            # Install serve globally if not installed
-            if ! command -v serve > /dev/null; then
-              npm install -g serve
-            fi
-            # Kill any existing serve processes on port 3000 (optional)
-            pkill -f "serve -s /var/www/html/front_end" || true
-            # Start serving the build folder on port 3000 in the background
-            nohup serve -s /var/www/html/front_end -l 3000 > serve.log 2>&1 &
+            # Ensure the target directory exists
+            sudo mkdir -p /var/www/html/front_end
+            sudo chown -R $USER:$USER /var/www/html/front_end
+            # Copy the build output (already done by scp)
+            #  No need to repeat the copy here
+            # Set up permissions (if needed) -  Make sure web server can read the files
+            sudo chmod -R 755 /var/www/html/front_end
+            # Install serve (if you're using it) or any other production server.
+            npm install -g serve  # Install globally
+            # Start the server.  Change the port if needed.
+            serve -s /var/www/html/front_end -l 3000
+            # If you were using pm2, the commands would look like this:
+            # npm install -g pm2
+            # pm2 start /var/www/html/front_end -name "my-react-app"
