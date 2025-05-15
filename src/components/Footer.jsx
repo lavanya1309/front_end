@@ -412,7 +412,7 @@ export default function Footer() {
         <div className="lg:hidden flex flex-col gap-6 text-sm mt-10">
           <img src="/assets/logo.png" alt="Commnet Logo" className="w-[140px] max-w-full" data-aos="fade-up" />
           <p className="text-[15px] leading-relaxed" data-aos="fade-up">
-            With more than 35 years of experience, 7 offices and over 1500 employees across the region - Commnet is a
+            With more than 25 years of experience, 7 offices and over across the region - Commnet is a
             leading end-to-end digital solutions provider...
           </p>
 
