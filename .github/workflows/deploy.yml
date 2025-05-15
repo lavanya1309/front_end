@@ -20,9 +20,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run ESLint (optional)
-        run: npm run lint
-      
+      - name: Run ESLint (optional, with fix)
+        run: |
+          npm run lint -- --fix # Attempt to fix linting errors automatically
+          # If the fix doesn't resolve all errors and you want the workflow to continue,
+          # you can add || true to the end of the line.  However, it's generally
+          # better to fix the errors properly.
+          # Example:  npm run lint -- --fix || true
+
       - name: Build React + Vite app
         run: npm run build
 
