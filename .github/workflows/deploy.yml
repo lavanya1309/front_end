@@ -18,36 +18,33 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
+      - name: Install dependencies locally
         run: npm install
-
-      - name: Run ESLint (optional, ignore errors)
-        run: npm run lint || true
 
       - name: Build React + Vite app
         run: npm run build
 
-      - name: Copy build files to EC2
+      - name: Copy full project to EC2
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          source: "dist/"
-          target: "/var/www/html/front_end"
+          source: "."  # full repo
+          target: "/home/ubuntu/front_end"
 
-      - name: SSH into EC2 and serve the app (optional)
+      - name: SSH into EC2 and install/start app
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            # Install serve globally if not installed
+            cd /home/ubuntu/front_end
+            npm install --production  # install prod dependencies on EC2
+            # Start your app here; example using serve to serve the build folder
             if ! command -v serve > /dev/null; then
               npm install -g serve
             fi
-            # Kill any existing serve processes on port 3000 (optional)
-            #pkill -f "serve -s /var/www/html/front_end" || true
-            # Start serving the build folder on port 3000 in the background
-            nohup serve -s /var/www/html/front_end -l 3000 > serve.log 2>&1 &
+            pkill -f "serve -s dist" || true
+            nohup serve -s dist -l 3000 > serve.log 2>&1 &
