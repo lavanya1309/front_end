@@ -1,0 +1,49 @@
+name: Deploy React + Vite to EC2
+
+on:
+  push:
+    branches:
+      - main  # or your deployment branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint (optional)
+        run: npm run lint
+
+      - name: Build React + Vite app
+        run: npm run build
+
+      - name: Copy files to EC2
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: "."
+          target: "/home/ubuntu/front_end"  # or wherever you want on EC2
+
+      - name: SSH into EC2 and install/start app
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/front_end
+            npm install --production  # install production dependencies on EC2
+            # Start your app, e.g. serve build or pm2
+            # For example: npx serve -s dist -l 3000
