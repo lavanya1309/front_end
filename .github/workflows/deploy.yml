@@ -1,48 +1,36 @@
-name: Deploy React + Vite to EC2
+name: Deploy Frontend to EC2
 
 on:
   push:
     branches:
-      - main  # or your deployment branch
+      - main   # or your branch name
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies locally
-        run: npm install
-
-      - name: Build React + Vite app
-        run: npm run build
-
-      - name: Copy full project to EC2
+      - name: Copy front_end folder to EC2
         uses: appleboy/scp-action@v0.1.4
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          source: "."  # full repo
-          target: "/home/ubuntu/front_end"
+          host: ${{ secrets.EC2_HOST }}          # EC2 public IP or hostname
+          username: ${{ secrets.EC2_USER }}      # EC2 user, e.g. ubuntu/ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}        # Your private SSH key stored in GitHub Secrets
+          source: "front_end/**"
+          target: "/var/www/html/front_end"
 
-      - name: SSH into EC2 and install/start app
+      - name: SSH into EC2 and run npm commands
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /home/ubuntu/front_end
-            npm install --production  # install prod dependencies on EC2
-            # Start your app here; example using serve to serve the build folder
+            cd /var/www/html/front_end
+            npm install --production
             if ! command -v serve > /dev/null; then
               npm install -g serve
             fi
