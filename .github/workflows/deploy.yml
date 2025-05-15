@@ -1,9 +1,9 @@
-name: Deploy Frontend to EC2
+name: Deploy Frontend to EC2 using rsync
 
 on:
   push:
     branches:
-      - main   # or your branch name
+      - main
 
 jobs:
   deploy:
@@ -13,26 +13,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Copy front_end folder to EC2
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.EC2_HOST }}          # EC2 public IP or hostname
-          username: ${{ secrets.EC2_USER }}      # EC2 user, e.g. ubuntu/ec2-user
-          key: ${{ secrets.EC2_SSH_KEY }}        # Your private SSH key stored in GitHub Secrets
-          source: "front_end/**"
-          target: "/var/www/html/front_end"
-
-      - name: SSH into EC2 and run npm commands
+      - name: Sync front_end folder to EC2 via rsync
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /var/www/html/front_end
-            npm install --production
-            if ! command -v serve > /dev/null; then
-              npm install -g serve
-            fi
-            pkill -f "serve -s dist" || true
-            nohup serve -s dist -l 3000 > serve.log 2>&1 &
+            # Make sure target directory exists
+            mkdir -p /var/www/html/front_end
+
+      - name: Run rsync to copy files
+        run: |
+          rsync -avz --delete --exclude='.git*' -e "ssh -i ${{ secrets.EC2_SSH_KEY }} -o StrictHostKeyChecking=no" ./front_end/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/front_end/
